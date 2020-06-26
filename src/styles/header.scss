@@ -1,0 +1,78 @@
+.header {
+    background: black;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    &-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 10px;
+        border-bottom: 0.25px solid darkslategray;
+        &-title {
+            text-align: center;
+            &-link {
+               text-decoration: none;
+               color: white; 
+               & h1 {
+                margin: .25rem;
+                font-family: "Special Elite";
+                font-weight: 200;
+                } 
+            }     
+        }
+    }
+    &-links {
+        padding: 0 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &-social {
+            &-twitter {
+                width: 24px;
+            }
+        }
+        &-internal {
+            width: 50%;
+            margin: auto;
+            padding: 5px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &-link {
+                text-decoration: none;
+                color: lightgray;
+                font-family: Rubik;
+                font-size: 1.25rem;
+            }
+        }
+        
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .header {
+        &-content {
+            &-title {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .header {
+        &-content {
+            &-title {
+                &-link {
+                    & h1 {
+                        font-size: 1.65rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
