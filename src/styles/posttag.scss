@@ -1,0 +1,11 @@
+.posttag {
+    &-link {
+        text-decoration-color: white;
+        & small {
+            color: lightgray;
+            text-decoration: none;
+            font-family: Rubik;
+        }
+    }
+    
+}

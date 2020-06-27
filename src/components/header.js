@@ -15,19 +15,11 @@ const Header = ({ siteTitle }) => {
           </div>
       </div>
       <div className="header-links">
-        <div className="header-links-social">
-          <Link className="header-links-social-twitter" to="#">
-            <img src={Twitter} alt="Twitter"/>
-          </Link>
-        </div>
         <div className="header-links-internal">
           <Link className="header-links-internal-link" to="/philosophy">Philosophy</Link>
           <Link className="header-links-internal-link" to="/psychology">Psychology</Link>
-          <Link className="header-links-internal-link" to="/geopolitics">Geopolitics</Link>
+          <Link className="header-links-internal-link" to="/geopolitics">Politics</Link>
           <Link className="header-links-internal-link" to="/science">Science</Link>
-        </div>
-        <div className="header-links-dummy">
-
         </div>
       </div>
     </div>
