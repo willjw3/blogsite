@@ -1,6 +1,6 @@
 ---
 title: "What Do We Know About Anything?"
-date: "2020-06-27"
+date: "2020-06-29"
 published: true
 tags: ["philosophy", "epistemology", "blog"]
 pagetype: "article"

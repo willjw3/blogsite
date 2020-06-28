@@ -11,7 +11,6 @@ const PostList = ({posts}) => {
                     <h4>{post.node.frontmatter.title}</h4>
                   </Link>
                   <small>{post.node.frontmatter.date}</small>
-                  <hr/>
                 </div> 
               )
             })}

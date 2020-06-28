@@ -23,10 +23,10 @@ const IndexPage = ({data}) => {
     if (posts[i].node.frontmatter.tags.includes("psychology") && psychologyPosts.length < 2) {
       psychologyPosts.push(posts[i])
     }
-    if (posts[i].node.frontmatter.tags.includes("politics") && politicsPosts.length < 2) {
+    if (posts[i].node.frontmatter.tags.includes("politics") && politicsPosts.length < 1) {
       politicsPosts.push(posts[i])
     }
-    if (posts[i].node.frontmatter.tags.includes("science") && sciencePosts.length < 2) {
+    if (posts[i].node.frontmatter.tags.includes("science") && sciencePosts.length < 1) {
       sciencePosts.push(posts[i])
     }
   }
@@ -44,15 +44,19 @@ const IndexPage = ({data}) => {
           <div className="index-main-body-postlist">
             <h3>Philosophy</h3>
             <PostList posts={philosophyPosts} />
+            <hr/>
             <br />
             <h3>Psychology</h3>
             <PostList posts={psychologyPosts} />
+            <hr/>
             <br />
             <h3>Politics</h3>
             <PostList posts={politicsPosts} />
+            <hr/>
             <br />
             <h3>Science</h3>
             <PostList posts={sciencePosts} />
+            <hr/>
           </div>
         </div>
       </div>
