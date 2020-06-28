@@ -11,7 +11,7 @@ const Header = ({ siteTitle }) => {
     <div className="header">
       <div className="header-content">
           <div className="header-content-title">
-              <Link to="/" className="header-content-title-link"><h1>THE CONDEMNATION GAME</h1></Link>
+              <Link to="/" className="header-content-title-link"><h1>TO LIVE AND DIE IN THE 21ST CENTURY</h1></Link>
           </div>
       </div>
       <div className="header-links">
