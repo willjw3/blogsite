@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
+import PostTag from "../components/posttag";
 import Footer from "../components/footer";
 import SEO from "../components/seo";
 import "../styles/article.scss";
@@ -33,6 +34,11 @@ const Article = ({data}) => {
                     <small>{post.frontmatter.date}</small>
                     <hr/>
                     <div className="article-main-body" dangerouslySetInnerHTML={{__html: post.html}} />
+                    <div className="article-main-tags">
+                        {post.frontmatter.tags.map(tag => {
+                            return (<PostTag tag={tag} />)
+                        })}
+                    </div>
                 </div>
                 <Footer content="light" />
             </div>

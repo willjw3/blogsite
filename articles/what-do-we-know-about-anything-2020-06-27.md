@@ -6,7 +6,7 @@ tags: ["philosophy", "epistemology", "blog"]
 pagetype: "article"
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/1yOhXEZCTBA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vaYVQMpkTYQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br>
 Though we're painfully aware of the limits of human knowledge, we somehow have an absurdly high level of confidence that our opinions are right. Or good, or whatever word you want to use to associate a positive orientation toward a specific idea...
 
