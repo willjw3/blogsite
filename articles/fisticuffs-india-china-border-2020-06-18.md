@@ -2,7 +2,7 @@
 title: "Fisticuffs on the China-India Border"
 date: "2020-06-18"
 published: true
-tags: ["geopolitics", "politics"]
+tags: ["politics", "geopolitics"]
 pagetype: "article"
 ---
 

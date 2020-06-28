@@ -31,13 +31,13 @@ const Latest = () => {
             </div>
             <div className="latest-posts">
                 <Link id="link1" to={posts[0].node.fields.slug}>
-                    <small>{posts[0].node.frontmatter.title} <span>(philosophy)</span></small>
+                    <small>{posts[0].node.frontmatter.title} <span>({posts[0].node.frontmatter.tags[0]})</span></small>
                 </Link>
                 <Link id="link2" to={posts[1].node.fields.slug}>
-                    <small>{posts[1].node.frontmatter.title} <span>(psychology)</span></small>
+                    <small>{posts[1].node.frontmatter.title} <span>({posts[1].node.frontmatter.tags[0]})</span></small>
                 </Link>
                 <Link id="link3" to={posts[2].node.fields.slug}>
-                    <small>{posts[2].node.frontmatter.title} <span>(politics)</span></small>
+                    <small>{posts[2].node.frontmatter.title} <span>({posts[2].node.frontmatter.tags[0]})</span></small>
                 </Link>
             </div>
         </div>

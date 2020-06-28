@@ -8,7 +8,7 @@ import "../styles/article.scss";
 const Article = ({data}) => {
     const post = data.markdownRemark;
     console.log(post)
-    const [darkMode, setDarkMode] = useState(true);
+    const [darkMode, setDarkMode] = useState(false);
 
     return (
         <Layout>
