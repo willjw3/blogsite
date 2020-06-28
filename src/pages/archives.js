@@ -8,7 +8,6 @@ import "../styles/homearchives.scss";
 
 const Archives = ({data}) => {
     const posts = data.allMarkdownRemark.edges;
-    console.log(data);
     const { totalCount } = data.allMarkdownRemark;
     const tagHeader = `${totalCount} post${totalCount === 1 ? "" : "s"}`;
 

@@ -2,7 +2,7 @@
 title: "Gloom is in the Heart"
 date: "2020-06-25"
 published: true
-tags: ["psychology", "philosophy", "epistemology", "blog"]
+tags: ["psychology", "philosophy", "epistemology"]
 pagetype: "article"
 ---
 

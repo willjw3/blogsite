@@ -7,6 +7,8 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -88,7 +90,7 @@ module.exports = {
                       },
                   ],
                   "truncate": {
-                      "length": 125,
+                      "length": 120,
                       "byWords": true,
                       "ellipsis": "…"
                   },
@@ -110,8 +112,6 @@ module.exports = {
           }
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {

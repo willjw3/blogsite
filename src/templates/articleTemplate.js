@@ -3,12 +3,13 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import PostTag from "../components/posttag";
 import Footer from "../components/footer";
+import Img from "gatsby-image"
 import SEO from "../components/seo";
 import "../styles/article.scss";
 
 const Article = ({data}) => {
     const post = data.markdownRemark;
-    console.log(post)
+    let postImg = post.frontmatter.image ? post.frontmatter.image.childImageSharp.fluid : null
     const [darkMode, setDarkMode] = useState(false);
 
     return (
@@ -33,6 +34,9 @@ const Article = ({data}) => {
                     <h1>{post.frontmatter.title}</h1>
                     <small>{post.frontmatter.date}</small>
                     <hr/>
+                    {postImg && 
+                        <Img fluid={postImg} />
+                    }
                     <div className="article-main-body" dangerouslySetInnerHTML={{__html: post.html}} />
                     <div className="article-main-tags">
                         {post.frontmatter.tags.map(tag => {
@@ -55,7 +59,14 @@ query articleQuery($slug: String!) {
         frontmatter {
             title 
             date(formatString: "MMMM DD, YYYY") 
-            tags 
+            tags
+            image {
+            childImageSharp {
+              fluid(maxWidth: 800) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          } 
         }
     }
 }

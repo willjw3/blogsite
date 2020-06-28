@@ -58,16 +58,29 @@
 @media only screen and (max-width: 1200px) {
     .tagtemplate {
         &-body {
-            margin: 20vh auto;
+            &-body {
+                margin: 15vh auto;
+                width: 60%;
+            }
         }
         
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .tagtemplate {
+        &-body {
+            margin: 15vh auto;
+            width: 70%;
+        }
     }
 }
 
 @media only screen and (max-width: 600px) {
     .tagtemplate {
         &-body {
-            margin: 25vh auto;
+            margin: 15vh auto;
+            width: 75%;
         }
     }
 }

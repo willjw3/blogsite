@@ -3,13 +3,13 @@ import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import Footer from "../components/footer";
 import PostTag from "../components/posttag";
+import Img from "gatsby-image";
 import SEO from "../components/seo";
 import "../styles/archive.scss";
 
 const ArchiveTemplate = (props) => {
-    console.log(props)
+    
     const posts = props.data.allMarkdownRemark.edges;
-    // console.log(posts);
     const { totalCount } = props.data.allMarkdownRemark;
     const tagHeader = `${totalCount} post${totalCount === 1 ? "" : "s"}`;
 
@@ -35,6 +35,12 @@ const ArchiveTemplate = (props) => {
                               </Link>
                               <small className="archives-body-post-date">Posted on {post.node.frontmatter.date}</small>
                               <hr className="archives-body-post-under"/>
+                              {post.node.frontmatter.image && 
+                                <Img
+                                    fluid={post.node.frontmatter.image.childImageSharp.fluid}
+                                    style={{width: "200px", float: "left", marginRight: "5px"}} 
+                                />
+                              }
                               <p>{post.node.excerpt}</p>
                               <Link className="archives-body-post-link"
                                   to={post.node.fields.slug}
@@ -83,6 +89,13 @@ query paginationQuery($skip: Int!, $limit: Int!) {
           date 
           tags
           pagetype
+          image {
+              childImageSharp {
+                  fluid(maxWidth: 800) {
+                      ...GatsbyImageSharpFluid
+                  }
+              }
+          }
         }
         fields {
           slug

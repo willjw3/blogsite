@@ -57,8 +57,7 @@ const IndexPage = ({data}) => {
             <br />
             <br />
             <Link to="/archives"><p>Browse Archives</p></Link>
-          </div>
-          
+          </div> 
         </div>
       </div>
       <Footer content="light" />
@@ -83,6 +82,13 @@ query indexQuery {
           date(formatString: "MMMM DD, YYYY") 
           tags
           pagetype
+          image {
+            childImageSharp {
+              fluid(maxWidth: 800) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
         fields {
           slug

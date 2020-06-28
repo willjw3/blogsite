@@ -3,12 +3,12 @@ import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import Footer from "../components/footer";
 import PostTag from "../components/posttag";
+import Img from "gatsby-image"
 import SEO from "../components/seo";
 import "../styles/tagTemplate.scss";
 
 const TagTemplate = ({pageContext, data}) => {
     const posts = data.allMarkdownRemark.edges;
-    console.log(posts);
     const { tag } = pageContext;
     const { totalCount } = data.allMarkdownRemark;
     const tagHeader = `${totalCount} post${totalCount === 1 ? "" : "s"} tagged with "${tag}"`;
@@ -29,6 +29,12 @@ const TagTemplate = ({pageContext, data}) => {
                             </Link>
                             <small className="tagtemplate-body-post-date">Posted on {post.node.frontmatter.date}</small>
                             <hr className="tagtemplate-body-post-under"/>
+                            {post.node.frontmatter.image && 
+                                <Img
+                                    fluid={post.node.frontmatter.image.childImageSharp.fluid}
+                                    style={{width: "200px", float: "left", marginRight: "5px"}} 
+                                />
+                            }
                             <p>{post.node.excerpt}</p>
                             <Link className="tagtemplate-body-post-link"
                                 to={post.node.fields.slug}
@@ -69,6 +75,13 @@ export const pageQuery = graphql`
                 title
                 date(formatString: "MMMM DD, YYYY")
                 tags
+                image {
+                    childImageSharp {
+                        fluid(maxWidth: 800) {
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                }
             }
              fields {
                 slug
