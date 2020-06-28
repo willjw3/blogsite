@@ -32,7 +32,7 @@ const TagTemplate = ({pageContext, data}) => {
                             {post.node.frontmatter.image && 
                                 <Img
                                     fluid={post.node.frontmatter.image.childImageSharp.fluid}
-                                    style={{width: "200px", float: "left", marginRight: "5px"}} 
+                                    style={{width: "175px", float: "left", marginRight: "5px"}} 
                                 />
                             }
                             <p>{post.node.excerpt}</p>
@@ -68,7 +68,7 @@ export const pageQuery = graphql`
       totalCount
       edges {
          node {
-            excerpt(pruneLength: 400)
+            excerpt(pruneLength: 500)
             html
             id
             frontmatter {

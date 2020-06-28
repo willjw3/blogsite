@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import Footer from "../components/footer";
 import PostTag from "../components/posttag";
+import Img from "gatsby-image";
 import SEO from "../components/seo";
 import "../styles/homearchives.scss";
 
@@ -32,6 +33,12 @@ const Archives = ({data}) => {
                               </Link>
                               <small className="archives-body-post-date">Posted on {post.node.frontmatter.date}</small>
                               <hr className="archives-body-post-under"/>
+                              {post.node.frontmatter.image && 
+                                <Img
+                                    fluid={post.node.frontmatter.image.childImageSharp.fluid}
+                                    style={{width: "175px", float: "left", marginRight: "5px"}} 
+                                />
+                              }
                               <p>{post.node.excerpt}</p>
                               <Link className="archives-body-post-link"
                                   to={post.node.fields.slug}
@@ -71,12 +78,19 @@ query archivesQuery {
     edges {
       node {
         html 
-        excerpt(pruneLength: 400)
+        excerpt(pruneLength: 500)
         frontmatter {
           title 
           date(formatString: "MMMM DD, YYYY") 
           tags
           pagetype
+          image {
+              childImageSharp {
+                  fluid(maxWidth: 800) {
+                      ...GatsbyImageSharpFluid
+                  }
+              }
+          }
         }
         fields {
           slug
