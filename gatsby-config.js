@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `The Condemnation Game`,
     description: `An examination of the human animal from a philosophical, psychological, and geopolitical point of view. Main topics include philosophy, politics, psychology, and science`,
-    author: `willjw3`,
+    author: `Will Jay`,
   },
   plugins: [
     `gatsby-plugin-sass`,
