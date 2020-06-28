@@ -44,7 +44,7 @@ const TagTemplate = ({pageContext, data}) => {
                     )
                 })}
                 </div>
-                <Footer />
+                <Footer content="dark" />
             </div>
         </Layout>
     );

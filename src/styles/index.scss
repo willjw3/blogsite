@@ -15,6 +15,7 @@ html, body {
             width: 60%;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             &-post {
                 width: 60%;
                 margin: 0 auto;
@@ -39,6 +40,10 @@ html, body {
                 & small {
                     font-family: Rubik;
                     font-style: italic;
+                }
+                & p {
+                    font-family: Rubik;
+                    text-decoration: underline;
                 }
             }
         }

@@ -18,18 +18,16 @@
             margin-bottom: 60px;
             &-link {
                 text-decoration: none;
-                color: black;
                 & h2 {
                     margin-bottom: 0;
                     font-family: Raleway;
-                    //color: dodgerblue;
                     font-weight: 600;
                     font-style: italic;
                     text-align: left;
                 }
             }
             &-date {
-               font-family: Rubik; 
+                font-family: Rubik;
             }
             &-under {
                 border: 1px solid dodgerblue;
@@ -39,7 +37,7 @@
                 font-family: Raleway;
             }
             & small {
-                color: darkgray;
+                font-family: Rubik;
             }
             &-tag-wrap {
                 display: grid;
@@ -47,12 +45,7 @@
             }
         }
         &-pagination {
-            &-link-left {
-                color: dodgerblue;
-                float: left;
-                font-family: Rubik;
-            }
-            &-link-right {
+            &-link {
                 color: dodgerblue;
                 float: right;
                 font-family: Rubik;

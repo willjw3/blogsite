@@ -4,24 +4,22 @@ import Layout from "../components/layout";
 import Footer from "../components/footer";
 import PostTag from "../components/posttag";
 import SEO from "../components/seo";
-import "../styles/archive.scss";
+import "../styles/homearchives.scss";
 
-const ArchiveTemplate = (props) => {
-    console.log(props)
-    const posts = props.data.allMarkdownRemark.edges;
-    // console.log(posts);
-    const { totalCount } = props.data.allMarkdownRemark;
+const Archives = ({data}) => {
+    const posts = data.allMarkdownRemark.edges;
+    console.log(data);
+    const { totalCount } = data.allMarkdownRemark;
     const tagHeader = `${totalCount} post${totalCount === 1 ? "" : "s"}`;
 
-    const { currentPage, numPages } = props.pageContext
-    const isFirst = currentPage === 1
-    const isLast = currentPage === numPages
-    const prevPage = currentPage - 1 === 1 ? "/archives" : `/archives/${currentPage - 1}`
-    const nextPage = `/archives/${currentPage + 1}`
+    const currentPage = 1
+    const postsPerPage = 3 // see limit in graphql query below
+    const nextPage = `${currentPage + 1}`
+    const hasNextPage = data.allMarkdownRemark.totalCount > postsPerPage
 
     return (
         <Layout>
-          <SEO title="Archives" keywords={[`2ld21c`, `the condemnation game`, `geopolitics`, `philosophy`, `psychology`]} />
+          <SEO title="Archives" />
             <div className="archives">
                 <div className="archives-body">
                   <i><h2>{tagHeader}</h2></i>
@@ -50,16 +48,13 @@ const ArchiveTemplate = (props) => {
                       )
                   })}
                   <div className="archives-body-pagination">
-                  {!isFirst && (
-                            <Link to={prevPage} rel="prev" style={{ textDecoration: `none` }}>
-                                <span className="archives-body-pagination-link-left">← Previous Page</span>
-                            </Link>
-                    )}
-                    {!isLast && (
-                        <Link to={nextPage} rel="next" style={{ textDecoration: `none` }}>
-                            <span className="archives-body-pagination-link-right">Next Page →</span>
-                        </Link>
-                    )}
+                  {hasNextPage &&
+                    <div>
+                      <Link to={nextPage} rel="next" style={{ textDecoration: `none` }}>
+                        <span className="archives-body-pagination-link">Next Page →</span>
+                      </Link>
+                    </div>
+                  }
                   </div>
                 </div>
                 <Footer content="light" />
@@ -68,11 +63,11 @@ const ArchiveTemplate = (props) => {
     );
 }
 
-export default ArchiveTemplate;
+export default Archives;
 
 export const pageQuery = graphql`
-query paginationQuery($skip: Int!, $limit: Int!) {
-  allMarkdownRemark(limit: $limit skip: $skip sort: { fields: [frontmatter___date], order: DESC}) {
+query archivesQuery {
+  allMarkdownRemark(limit: 3 sort: { fields: [frontmatter___date], order: DESC}) {
     totalCount
     edges {
       node {
@@ -80,7 +75,7 @@ query paginationQuery($skip: Int!, $limit: Int!) {
         excerpt(pruneLength: 400)
         frontmatter {
           title 
-          date 
+          date(formatString: "MMMM DD, YYYY") 
           tags
           pagetype
         }

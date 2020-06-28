@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Footer from "../components/footer"
 import Latest from "../components/latest"
@@ -45,22 +45,23 @@ const IndexPage = ({data}) => {
             <h3>Philosophy</h3>
             <PostList posts={philosophyPosts} />
             <hr/>
-            <br />
             <h3>Psychology</h3>
             <PostList posts={psychologyPosts} />
             <hr/>
-            <br />
             <h3>Politics</h3>
             <PostList posts={politicsPosts} />
             <hr/>
-            <br />
             <h3>Science</h3>
             <PostList posts={sciencePosts} />
             <hr/>
+            <br />
+            <br />
+            <Link to="/archives"><p>Browse Archives</p></Link>
           </div>
+          
         </div>
       </div>
-      <Footer />
+      <Footer content="light" />
     </div>  
   </Layout>
   )

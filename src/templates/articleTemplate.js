@@ -34,7 +34,7 @@ const Article = ({data}) => {
                     <hr/>
                     <div className="article-main-body" dangerouslySetInnerHTML={{__html: post.html}} />
                 </div>
-                <Footer />
+                <Footer content="light" />
             </div>
         </Layout>
     );
