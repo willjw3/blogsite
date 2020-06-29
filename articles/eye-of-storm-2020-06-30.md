@@ -1,6 +1,6 @@
 ---
 title: "Eye of the Storm"
-date: "2020-06-30"
+date: "2020-06-28"
 published: true
 tags: ["philosophy", "epistemology"]
 image: ../src/images/eye_of_storm.jpg

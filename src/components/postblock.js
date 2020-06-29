@@ -5,7 +5,7 @@ import "../styles/postblock.scss"
 
 const PostBlock = ({post}) => {
     let postImg = post.node.frontmatter.image ? post.node.frontmatter.image.childImageSharp.fluid : null
-    console.log(postImg)
+    console.log(post)
     return (
         <div className="postblock">
             <Link to={post.node.fields.slug}>
