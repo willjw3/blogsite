@@ -18,7 +18,7 @@ const Header = ({ siteTitle }) => {
         <div className="header-links-internal">
           <Link className="header-links-internal-link" to="/tags/philosophy">Philosophy</Link>
           <Link className="header-links-internal-link" to="/tags/psychology">Psychology</Link>
-          <Link className="header-links-internal-link" to="/tags/geopolitics">Politics</Link>
+          <Link className="header-links-internal-link" to="/tags/politics">Politics</Link>
           <Link className="header-links-internal-link" to="/tags/science">Science</Link>
         </div>
       </div>
