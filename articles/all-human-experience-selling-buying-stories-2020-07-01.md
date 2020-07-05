@@ -1,5 +1,5 @@
 ---
-title: "Is All Human Experience Just the Selling and Buying of Stories?"
+title: "All Social Interactions Are Just the Selling and Buying of Stories"
 date: "2020-07-01"
 published: true
 tags: ["philosophy", "psychology", "sociology", ]
