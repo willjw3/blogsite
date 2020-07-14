@@ -1,0 +1,20 @@
+---
+title: "Are People Generally Good?"
+date: "2020-07-14"
+published: true
+tags: ["philosophy", "psychology" ]
+image: ../src/images/skulls.jpg
+pagetype: "article"
+---
+
+Think of the people in your life you consider to be the most upright, virtuous people. You admire their adherence to their own moral codes, those well-principled individuals who understand themselves and their times. Who knows, maybe you’re one of them.
+
+Now, out of that group of individuals, which one is most likely to possess a morality that would transcend any and all of the present era? Which among them would have a set of guiding principles that would make him or her a viable candidate for a thought experiment that would have them hypothetically thrust into a time period that occurred well before the dawn of civilization and forced to adapt and survive? Maybe it’s you you’re thinking of... Is there a universal set of principles,... wait. Let me rephrase that as “universal and eternal.” Is there a set of universal and eternal principles that would serve as a moral compass for a human being in any era of humans who were biologically indistinguishable from us?
+
+What is the origin of morality? Is there something within all, or at least most of us that guides us? A basic “goodness,” if you will? What would that goodness be like? Altruistic tendencies, are they within all of us? Something more basic, more primitive that imbues our psyches with a sense of willingness to do that which is, hmmm…. Let’s not say “good” here; to do that which leaves both the actor and the observer with a positive attitude toward the action? Positive and negative emotions and feelings guide our thinking and behavior, but is it a simple matter of syncing up our collection of them with those of others and selecting out the ones common to all for use as a basis for creating a societal moral code? 
+
+To a child belonging to a tribe living in what would seem to us the harshest of environments, one with a meager supply of game to hunt, where deadly battles with other tribes rage continuously in a larger war for limited resources,… what would “good” look like to that child? When hunger, fear, and irritation building up to rage and then exhaustion are essential facts of existence, how does someone building up a worldview almost completely dominated by a focus on survival, come to have a lasting sense of ‘goodness’ when positive feelings and emotions are perceived as fleeting as soon as they arrive?
+
+We could imagine children and relatively dependent members of the tribe coming to feel something like what we call love for a stronger member, a skilled hunter, an unyielding warrior who acts benevolently toward his familiars and mercilessly toward outsiders. He who extinguishes the lights of those who oppose him and his tribe’s continued efforts to live and have more than just enough. He comes to want this. Maybe he never knew it was possible to feel it, until after a desperate battle in which he poured out not only all of his rage and desire, but a significant measure of his lifeblood. Maybe then he returned to his people exhausted, yet victorious, and saw that look in their eyes. Maybe the eyes of his people showed him something he’d never quite put together until then. Adoration. And maybe for that, he adored them, for giving him a reason beyond just mere survival to hunt and fight. We can imagine he loved them and came to feel something different for the outsiders he fought, something like hatred. Not because they sought to push him and his people away from the survival space; it seems likely he would have recognized long before that kill-or-be-killed was the name of the game. No, maybe what came to inspire this feeling of what we might call hatred, was the idea that the others, the aliens, the outsiders,… they wished to take away love from him. The love his people gave him and the love he, in turn, felt for them. 
+
+But, this is all just speculation, plausible though it may seem. 
