@@ -8,6 +8,7 @@ import SEO from "../components/seo";
 import "../styles/article.scss";
 
 const Article = ({data}) => {
+    const siteTitle = data.site.siteMetadata.title
     const post = data.markdownRemark;
     let postImg = post.frontmatter.image ? post.frontmatter.image.childImageSharp.fluid : null
     const [darkMode, setDarkMode] = useState(false);
@@ -44,7 +45,7 @@ const Article = ({data}) => {
                         })}
                     </div>
                 </div>
-                <Footer content="light" />
+                <Footer content="light" siteTitle={siteTitle} />
             </div>
         </Layout>
     );
@@ -54,6 +55,11 @@ export default Article;
 
 export const pageQuery = graphql`
 query articleQuery($slug: String!) {
+    site {
+        siteMetadata {
+            title
+        }
+    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
         html 
         frontmatter {

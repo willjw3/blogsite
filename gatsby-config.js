@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `To Live and Die in the 21st Century`,
-    description: `An examination of the human animal from a philosophical, psychological, geopolitical and scientific point of view. The main topics include philosophy, politics, psychology, and science`,
+    title: `THE CONDEMNATION GAME`,
+    description: `An examination of the human animal from a philosophical, psychological, geopolitical and scientific point of view.`,
     author: `Will Jay`,
   },
   plugins: [

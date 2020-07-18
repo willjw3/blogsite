@@ -8,7 +8,7 @@ import SEO from "../components/seo";
 import "../styles/archive.scss";
 
 const ArchiveTemplate = (props) => {
-    
+    const siteTitle = props.data.site.siteMetadata.title
     const posts = props.data.allMarkdownRemark.edges;
     const { totalCount } = props.data.allMarkdownRemark;
     const tagHeader = `${totalCount} post${totalCount === 1 ? "" : "s"}`;
@@ -68,7 +68,7 @@ const ArchiveTemplate = (props) => {
                     )}
                   </div>
                 </div>
-                <Footer content="light" />
+                <Footer content="light" siteTitle={siteTitle} />
             </div>
         </Layout>
     );
@@ -78,6 +78,11 @@ export default ArchiveTemplate;
 
 export const pageQuery = graphql`
 query paginationQuery($skip: Int!, $limit: Int!) {
+  site {
+    siteMetadata {
+      title
+    }
+  }
   allMarkdownRemark(limit: $limit skip: $skip sort: { fields: [frontmatter___date], order: DESC}) {
     totalCount
     edges {

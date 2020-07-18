@@ -10,6 +10,7 @@ import "../styles/index.scss"
 
 
 const IndexPage = ({data}) => {
+  const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges 
   const philosophyPosts = []
   const psychologyPosts = []
@@ -60,7 +61,7 @@ const IndexPage = ({data}) => {
           </div> 
         </div>
       </div>
-      <Footer content="light" />
+      <Footer content="light" siteTitle={siteTitle} />
     </div>  
   </Layout>
   )
@@ -70,6 +71,11 @@ export default IndexPage
 
 export const pageQuery = graphql`
 query indexQuery {
+  site {
+    siteMetadata {
+      title
+    }
+  }
   allMarkdownRemark(limit: 20 sort: { fields: [frontmatter___date], order: DESC}) {
     totalCount
     edges {

@@ -8,6 +8,7 @@ import SEO from "../components/seo";
 import "../styles/tagTemplate.scss";
 
 const TagTemplate = ({pageContext, data}) => {
+    const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges;
     const { tag } = pageContext;
     const { totalCount } = data.allMarkdownRemark;
@@ -50,7 +51,7 @@ const TagTemplate = ({pageContext, data}) => {
                     )
                 })}
                 </div>
-                <Footer content="dark" />
+                <Footer content="dark" siteTitle={siteTitle} />
             </div>
         </Layout>
     );
@@ -60,6 +61,11 @@ export default TagTemplate;
 
 export const pageQuery = graphql`
   query($tag: String) { 
+    site {
+        siteMetadata {
+            title
+        }
+    }
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
