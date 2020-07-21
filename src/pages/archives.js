@@ -78,7 +78,7 @@ query archivesQuery {
     edges {
       node {
         html 
-        excerpt(pruneLength: 500)
+        excerpt(pruneLength: 700)
         frontmatter {
           title 
           date(formatString: "MMMM DD, YYYY") 

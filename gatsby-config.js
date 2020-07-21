@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `THE CONDEMNATION GAME`,
-    description: `An examination of the human animal from a philosophical, psychological, geopolitical and scientific point of view.`,
-    author: `Will Jay`,
+    title: `GATSBY STARTER WRITER'S SHOWCASE`,
+    description: `From serious thoughts to trivial rants, all of my brain droppings are here.`,
+    author: `willjw3`,
   },
   plugins: [
     `gatsby-plugin-sass`,

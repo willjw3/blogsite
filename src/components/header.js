@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
-import Twitter from "../images/twitter.svg"
 import "../styles/header.scss"
 
 

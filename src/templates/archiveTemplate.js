@@ -21,7 +21,7 @@ const ArchiveTemplate = (props) => {
 
     return (
         <Layout>
-          <SEO title="Archives" keywords={[`2ld21c`, `the condemnation game`, `geopolitics`, `philosophy`, `psychology`]} />
+          <SEO title="Archives" keywords={[`gatsby`, `geopolitics`, `philosophy`, `psychology`]} />
             <div className="archives">
                 <div className="archives-body">
                   <i><h2>{tagHeader}</h2></i>
@@ -88,7 +88,7 @@ query paginationQuery($skip: Int!, $limit: Int!) {
     edges {
       node {
         html 
-        excerpt(pruneLength: 400)
+        excerpt(pruneLength: 700)
         frontmatter {
           title 
           date 
