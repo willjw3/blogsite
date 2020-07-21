@@ -21,6 +21,8 @@
 - Mobile responsive
 - Pagination
 - Minimalist design makes it highly modifiable; make your own customized contact forms and search components, for example.
+- SEO component for use in pages so search engines can find them.
+- Style with Sass
 
 ## Getting Started
 If you don't have Gatsby CLI installed yet, do that:
