@@ -5,82 +5,95 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby's default starter
+  Writer Showcase - A Gatsby Starter
 </h1>
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+*Writer Showcase is a Gatsby Starter blog template created with writers in mind, but really, anyone can use it. It's totally usable right out of the box, but minimalist enough to be easily modifiable to suit your needs. *<br>
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ae092d09-ae34-4fc0-8179-322c86d197b4/deploy-status)](https://app.netlify.com/sites/developer-diary/deploys)
 
-## 🚀 Quick start
+## Features
+- Ready to go - Blog author name, author image, etc,... can be easily added using a config file.
+- Includes Netlify CMS. Users can log in to an admin page and easily create a blog post with a nice, simple user interface.
+- Blog posts created as markdown files. It's easy to get started with markdown if you're unfamiliar - [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+- Gatsby v.2
+- React v.16.12.
+- Mobile responsive
+- Pagination
+- Minimalist design makes it highly modifiable; make your own customized contact forms and search components, for example.
 
-1.  **Create a Gatsby site.**
+## Getting Started
+If you don't have Gatsby CLI installed yet, do that:
+```
+npm install -g gatsby-cli
+```
+Install this starter with your name of choice for your blog:
+```
+gatsby new your-blog-name https://github.com/willjw3/gatsby-starter-writer-showcase.git
+```
+Navigate into your new project's directory:
+```
+cd your-blog-name
+```
+and run the development server:
+```
+gatsby develop
+```
+Go to the [http://localhost:8000](http://localhost:8000) to see your new blog.<br>
+Go to [http://localhost:8000/___graphql](http://localhost:8000/___graphql) to explore your site with a simple GraphQL interface.<br>
+Go to the [http://localhost:8000/admin/](http://localhost:8000/admin/) to access the content management system. (Make sure you've set things up with Netlify CMS first - see "Adding blog posts using Netlify CMS (Content Management System)" below)
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+## Adding Your Information To The Blog
+You can add your blog's url, title, tagline, author, social-media contact info and more in the `gatsby-config.js` file. 
 
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+## Adding blog posts using Netlify CMS (Content Management System)
+If you aren't familiar with Netlify CMS, the first thing you'll want to do is familiarize yourself with it. [Netlify CMS](https://www.netlifycms.org/)<br>
+*Note: It's recommended that you deploy your site with Netlify. Netlify hosting and Netlify CMS are separate, but work best when used together.*<br>
+Both the `gatsby-plugin-netlify-cms` plugin and the `netlify-cms-app` are already installed in your blog. All you need to do is set up your site for continuous deployment with a platform like [Netlify](https://www.netlify.com/) and connect Netlify CMS to your GitHub (if you're using GitHub) repository by doing the following:<br>
 
-1.  **Start developing.**
+(From the Netlify CMS docs)
+> Netlify's Identity and Git Gateway services allow you to manage CMS admin users for your site without requiring them to have an account with your Git host or commit access on your repo. From your site dashboard on Netlify:
 
-    Navigate into your new site’s directory and start it up.
+> Go to Settings > Identity, and select Enable Identity service.
+Under Registration preferences, select Open or Invite only. In most cases, you want only invited users to access your CMS, but if you're just experimenting, you can leave it open for convenience.
+If you'd like to allow one-click login with services like Google and GitHub, check the boxes next to the services you'd like to use, under External providers.
+Scroll down to Services > Git Gateway, and click Enable Git Gateway. This authenticates with your Git host and generates an API access token. In this case, we're leaving the Roles field blank, which means any logged in user may access the CMS. For information on changing this, check the Netlify Identity documentation.
 
-    ```shell
-    cd my-default-starter/
-    gatsby develop
-    ```
+**Creating Blog Posts with the CMS**
+- Go to `<your site's url>/admin` and log in.
+- Fill in the fields:
+  - TAGS: enter in tag names separated by commas and spaces. Ex: `gatsby, graphql`
+  - PUBLISHED: toggle the switch to the on position. This is the same as setting the frontmatter field manually (`published: true`)
+  - DATE: leave the current date and time, or click to bring up the date picker.
+  - TITLE: enter your post's title. Ex: `My First Post`
+  - BODY: enter your post's main body content, either in Markdown or in Rich Text.
+- Click 'Publish'
 
-1.  **Open the source code and start editing!**
 
-    Your site is now running at `http://localhost:8000`!
+## Adding Blog Posts Manually
+Using your favorite text editor, go into your project's directory and find the `posts` folder. In that folder, add a new markdown file with your new blog post's name in mind. For example, if your post were to be called "Make a Blog With Gatsby", you might want to create the file `make-blog-with-gatsby.md` <br>
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+Add the frontmatter to that markdown file:
+```
+---
+title: 'Make a Blog With React'
+tags: ["react", "nodejs"]
+published: true
+date: '2019-05-29'
+---
+```
+and then add the rest of your content below the frontmatter. 
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+## Authors
+- Will Ward [@willjw3](https://github.com/willjw3)
 
-## 🧐 What's inside?
+## Contribute
+- Fork the repo
+- Create your feature branch (git checkout -b feature/fooBar)
+- Commit your changes (git commit -am 'Add some fooBar')
+- Push to the branch (git push origin feature/fooBar)
+- Create a new Pull Request
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
-
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
-
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
-
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
-
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
-
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
-
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
-
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
-
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
-
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
 
 ## 🎓 Learning Gatsby
 
@@ -93,7 +106,3 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 ## 💫 Deploy
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
