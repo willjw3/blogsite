@@ -9,10 +9,14 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-netlify-cms-paths`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [`gatsby-remark-responsive-iframe`]
+        plugins: [
+          `gatsby-remark-responsive-iframe`,
+          `gatsby-plugin-netlify-cms-paths`,
+        ]
       }
     },
     {
