@@ -28,7 +28,9 @@ const Article = ({data}) => {
                                 className="checkbox" 
                                 type="checkbox"
                             />
-                            <label htmlFor="checkbox" />
+                            <label htmlFor="checkbox">
+                                <input type="text" style={{visibility: "hidden"}}/>
+                            </label>
                         </span>
                         <span style={{ color: darkMode ? "orange" : "gray"}}>☽</span>
                     </div>

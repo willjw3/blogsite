@@ -8,6 +8,7 @@ import SEO from "../components/seo";
 import "../styles/homearchives.scss";
 
 const Archives = ({data}) => {
+    const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges;
     const { totalCount } = data.allMarkdownRemark;
     const tagHeader = `${totalCount} post${totalCount === 1 ? "" : "s"}`;
@@ -63,7 +64,7 @@ const Archives = ({data}) => {
                   }
                   </div>
                 </div>
-                <Footer content="light" />
+                <Footer content="light" siteTitle={siteTitle} />
             </div>
         </Layout>
     );
@@ -73,6 +74,11 @@ export default Archives;
 
 export const pageQuery = graphql`
 query archivesQuery {
+  site {
+    siteMetadata {
+      title
+    }
+  }
   allMarkdownRemark(limit: 3 sort: { fields: [frontmatter___date], order: DESC}) {
     totalCount
     edges {

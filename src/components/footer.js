@@ -7,7 +7,7 @@ const Footer = ({content, siteTitle}) => {
         <div className="footer">
           <hr/>
           <div className={`footer-${content}`}>
-            <a href="#"><img className={`footer-${content}-twitter`} src={Twitter} /></a>
+            <a href="https://twitter.com/"><img className={`footer-${content}-twitter`} src={Twitter} aria-label="Twitter link" /></a>
             <p>© {new Date().getFullYear()}, {siteTitle}</p>
           </div> 
         </div>
