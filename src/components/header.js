@@ -15,10 +15,10 @@ const Header = ({ siteTitle }) => {
       </div>
       <div className="header-links">
         <div className="header-links-internal">
-          <Link className="header-links-internal-link" to="/tags/philosophy">Philosophy</Link>
-          <Link className="header-links-internal-link" to="/tags/psychology">Psychology</Link>
-          <Link className="header-links-internal-link" to="/tags/politics">Politics</Link>
-          <Link className="header-links-internal-link" to="/tags/science">Science</Link>
+          <Link className="header-links-internal-link" to="/tags/web-development">Web Development</Link>
+          <Link className="header-links-internal-link" to="/tags/data-science">Data Science</Link>
+          <Link className="header-links-internal-link" to="/tags/mathematics">Mathematics & Physics</Link>
+          <Link className="header-links-internal-link" to="/tags/technology">Technology</Link>
         </div>
       </div>
     </div>

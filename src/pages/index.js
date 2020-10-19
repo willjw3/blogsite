@@ -43,16 +43,16 @@ const IndexPage = ({data}) => {
             <PostBlock post={posts[0]} />
           </div>
           <div className="index-main-body-postlist">
-            <h3>Philosophy</h3>
+            <h3>Web Development</h3>
             <PostList posts={philosophyPosts} />
             <hr/>
-            <h3>Psychology</h3>
+            <h3>Data Science</h3>
             <PostList posts={psychologyPosts} />
             <hr/>
-            <h3>Politics</h3>
+            <h3>Mathematics & Physics</h3>
             <PostList posts={politicsPosts} />
             <hr/>
-            <h3>Science</h3>
+            <h3>Technology</h3>
             <PostList posts={sciencePosts} />
             <hr/>
             <br />

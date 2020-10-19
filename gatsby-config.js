@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `GATSBY STARTER WRITER SHOWCASE`,
+    title: `WILL WARD`,
     description: `From serious thoughts to trivial rants, all of my brain droppings are here.`,
     author: `willjw3`,
   },

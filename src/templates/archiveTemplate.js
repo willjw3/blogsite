@@ -38,7 +38,7 @@ const ArchiveTemplate = (props) => {
                               {post.node.frontmatter.image && 
                                 <Img
                                     fluid={post.node.frontmatter.image.childImageSharp.fluid}
-                                    style={{width: "200px", float: "left", marginRight: "5px"}} 
+                                    style={{width: "150px", float: "left", marginRight: "5px"}} 
                                 />
                               }
                               <p>{post.node.excerpt}</p>

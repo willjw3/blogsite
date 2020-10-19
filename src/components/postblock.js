@@ -13,9 +13,12 @@ const PostBlock = ({post}) => {
             </Link>
             <small>{post.node.frontmatter.date}</small>
             <hr/>
-            {postImg && 
-                <Img fluid={postImg} />
-            }
+            <div className="postblock-image">
+                {postImg && 
+                    <Img fluid={postImg} style={{width: "100%"}} />
+                }
+            </div>
+            
             <div dangerouslySetInnerHTML={{__html: post.node.snippet}} />
             <Link to={post.node.fields.slug}>
                 <button>Read the Full Post</button>
