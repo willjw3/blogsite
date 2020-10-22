@@ -12,23 +12,23 @@ import "../styles/index.scss"
 const IndexPage = ({data}) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges 
-  const philosophyPosts = []
-  const psychologyPosts = []
-  const politicsPosts = []
-  const sciencePosts = []
+  const dataSciencePosts = []
+  const webDevelopmentPosts = []
+  const mathematicsPosts = []
+  const technologyPosts = []
 
   for (let i=0; i<posts.length; i++) {
-    if (posts[i].node.frontmatter.tags.includes("philosophy") && philosophyPosts.length < 2) {
-      philosophyPosts.push(posts[i])
+    if (posts[i].node.frontmatter.tags.includes("data-science") && dataSciencePosts.length < 2) {
+      dataSciencePosts.push(posts[i])
     }
-    if (posts[i].node.frontmatter.tags.includes("psychology") && psychologyPosts.length < 2) {
-      psychologyPosts.push(posts[i])
+    if (posts[i].node.frontmatter.tags.includes("web-development") && webDevelopmentPosts.length < 2) {
+      webDevelopmentPosts.push(posts[i])
     }
-    if (posts[i].node.frontmatter.tags.includes("politics") && politicsPosts.length < 1) {
-      politicsPosts.push(posts[i])
+    if (posts[i].node.frontmatter.tags.includes("mathematics") && mathematicsPosts.length < 1) {
+      mathematicsPosts.push(posts[i])
     }
-    if (posts[i].node.frontmatter.tags.includes("science") && sciencePosts.length < 1) {
-      sciencePosts.push(posts[i])
+    if (posts[i].node.frontmatter.tags.includes("technology") && technologyPosts.length < 1) {
+      technologyPosts.push(posts[i])
     }
   }
   
@@ -44,16 +44,16 @@ const IndexPage = ({data}) => {
           </div>
           <div className="index-main-body-postlist">
             <h3>Web Development</h3>
-            <PostList posts={philosophyPosts} />
+            <PostList posts={webDevelopmentPosts} />
             <hr/>
             <h3>Data Science</h3>
-            <PostList posts={psychologyPosts} />
+            <PostList posts={dataSciencePosts} />
             <hr/>
             <h3>Mathematics & Physics</h3>
-            <PostList posts={politicsPosts} />
+            <PostList posts={mathematicsPosts} />
             <hr/>
             <h3>Technology</h3>
-            <PostList posts={sciencePosts} />
+            <PostList posts={technologyPosts} />
             <hr/>
             <br />
             <br />
