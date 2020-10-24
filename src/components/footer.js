@@ -1,5 +1,4 @@
 import React from "react"
-import Twitter from "../images/twitter.svg"
 import "../styles/footer.scss";
 
 const Footer = ({content, siteTitle}) => {

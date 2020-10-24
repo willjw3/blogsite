@@ -121,6 +121,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
+          `Bebas Neue`,
           `Special Elite`,
           `Lusitana`,
           `Raleway`,
