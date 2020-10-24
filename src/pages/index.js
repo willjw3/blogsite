@@ -10,6 +10,9 @@ import "../styles/index.scss"
 
 
 const IndexPage = ({data}) => {
+  const allTags = data.allMarkdownRemark.group.map(tag => {
+    return tag.fieldValue
+  })
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges 
   const dataSciencePosts = []
@@ -34,34 +37,41 @@ const IndexPage = ({data}) => {
   
   return (
     <Layout>
-    <SEO title="Home" />
-    <div className="index">
-      <div className="index-main">
-        <Latest />
-        <div className="index-main-body">
-          <div className="index-main-body-post">
-            <PostBlock post={posts[0]} />
+      <SEO title="Home" />
+      <div className="index">
+        <div className="index-main">
+          <Latest />
+          <div className="index-main-body">
+            <div className="index-main-body-post">
+              <PostBlock post={posts[0]} />
+            </div>
+            <div className="index-main-body-postlist">
+              <h3>Web Development</h3>
+              <PostList posts={webDevelopmentPosts} />
+              <hr/>
+              <h3>Data Science</h3>
+              <PostList posts={dataSciencePosts} />
+              <hr/>
+              <h3>Mathematics & Physics</h3>
+              <PostList posts={mathematicsPosts} />
+              <hr/>
+              <h3>Technology</h3>
+              <PostList posts={technologyPosts} />
+              <hr/>
+              <div>
+                <h3>All Topics</h3>
+                {
+                  allTags.map(tag => {
+                    return <small style={{display: "block"}}>{tag}</small>
+                  })
+                }
+              </div>
+              <hr/>
+              <Link to="/archives"><h3 style={{marginTop: "50px"}}>Browse Archives</h3></Link>
+            </div> 
           </div>
-          <div className="index-main-body-postlist">
-            <h3>Web Development</h3>
-            <PostList posts={webDevelopmentPosts} />
-            <hr/>
-            <h3>Data Science</h3>
-            <PostList posts={dataSciencePosts} />
-            <hr/>
-            <h3>Mathematics & Physics</h3>
-            <PostList posts={mathematicsPosts} />
-            <hr/>
-            <h3>Technology</h3>
-            <PostList posts={technologyPosts} />
-            <hr/>
-            <br />
-            <br />
-            <Link to="/archives"><p>Browse Archives</p></Link>
-          </div> 
         </div>
-      </div>
-      <Footer content="light" siteTitle={siteTitle} />
+        <Footer content="light" siteTitle={siteTitle} />
     </div>  
   </Layout>
   )
@@ -100,6 +110,9 @@ query indexQuery {
           slug
         }
       }
+    }
+    group(field: frontmatter___tags) {
+      fieldValue
     }
   }
 }
