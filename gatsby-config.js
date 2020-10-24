@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `WILL WARD`,
-    description: `From serious thoughts to trivial rants, all of my brain droppings are here.`,
+    description: `Personal blog site of William Ward, software developer and educator.`,
     author: `willjw3`,
   },
   plugins: [

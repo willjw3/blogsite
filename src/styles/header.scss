@@ -7,11 +7,13 @@
     z-index: 1;
     &-content {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         padding-top: 10px;
         border-bottom: 0.25px solid darkslategray;
         &-title {
+            width: 20%;
+            margin: 0 2%;
             text-align: center;
             &-link {
                text-decoration: none;
@@ -21,7 +23,39 @@
                 font-family: "Special Elite";
                 font-weight: 200;
                 } 
+            }
+            @media screen and (max-width: 1000px) {
+                width: 30%;
             }     
+            @media screen and (max-width: 700px) {
+                width: 40%;
+            }     
+            @media screen and (max-width: 500px) {
+                width: 50%;
+            }     
+        }
+        &-social {
+            width: 20%;
+            margin: 0 2%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            &-link {
+                width: 25px;
+                &-icon {
+                    max-width: 30px;
+                    height: auto;
+                }
+            }
+            @media screen and (max-width: 1000px) {
+                width: 30%;
+            }  
+            @media screen and (max-width: 700px) {
+                width: 40%;
+            }  
+            @media screen and (max-width: 500px) {
+                width: 50%;
+            } 
         }
     }
     &-links {
