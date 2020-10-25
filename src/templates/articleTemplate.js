@@ -11,6 +11,7 @@ const Article = ({data}) => {
     const siteTitle = data.site.siteMetadata.title
     const post = data.markdownRemark;
     let postImg = post.frontmatter.image ? post.frontmatter.image.childImageSharp.fluid : null
+    
     const [darkMode, setDarkMode] = useState(false);
 
     return (
