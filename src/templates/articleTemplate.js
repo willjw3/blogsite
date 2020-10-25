@@ -8,10 +8,21 @@ import SEO from "../components/seo";
 import "../styles/article.scss";
 
 const Article = ({data}) => {
+    const techPosts = data.allMarkdownRemark.edges
     const siteTitle = data.site.siteMetadata.title
     const post = data.markdownRemark;
     let postImg = post.frontmatter.image ? post.frontmatter.image.childImageSharp.fluid : null
-    
+    const tags = post.frontmatter.tags 
+    let techIconPaths = []
+    tags.forEach(tag => {
+        let regex = new RegExp(tag, "g")
+        techPosts.forEach(image => {
+            if (image.node.frontmatter.image.publicURL.match(regex)) {
+                techIconPaths.push(image.node.frontmatter.image.publicURL)
+            }
+        })
+    })
+
     const [darkMode, setDarkMode] = useState(false);
 
     return (
@@ -37,6 +48,18 @@ const Article = ({data}) => {
                     </div>
                     <h1>{post.frontmatter.title}</h1>
                     <small>{post.frontmatter.date}</small>
+                    <div className="article-main-icons">
+                        {
+                            techIconPaths.length ?
+                            techIconPaths.map((icon, i) => {
+                                return (
+                                    <div className="article-main-icons-icon">
+                                        <img key={i} src={icon} alt={icon}/>
+                                    </div>
+                                ) 
+                            }) : ""
+                        }
+                    </div>
                     <hr/>
                     {postImg && 
                         <Img fluid={postImg} />
@@ -44,8 +67,8 @@ const Article = ({data}) => {
                     <div className="article-main-body" dangerouslySetInnerHTML={{__html: post.html}} />
                     <div className="article-main-tags">
                         {post.frontmatter.tags && 
-                            post.frontmatter.tags.map(tag => {
-                            return (<PostTag tag={tag} />)
+                            post.frontmatter.tags.map((tag, i) => {
+                            return (<PostTag key={i} tag={tag} />)
                         })}
                     </div>
                 </div>
@@ -64,6 +87,24 @@ query articleQuery($slug: String!) {
             title
         }
     }
+    svgs: allFile(filter: {extension: {regex: "/svg/"}}) {
+        edges {
+          node {
+            absolutePath
+          }
+        }
+      }
+      allMarkdownRemark(filter: {frontmatter: {pagetype: {eq: "tech"}}}) {
+        edges {
+          node {
+            frontmatter {
+              image {
+                publicURL
+              }
+            }
+          }
+        }
+      }
     markdownRemark(fields: { slug: { eq: $slug } }) {
         html 
         frontmatter {
