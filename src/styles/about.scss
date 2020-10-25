@@ -4,7 +4,15 @@
     justify-content: space-between;
     min-height: 100vh;
     &-main {
+        margin: auto;
         margin-top: 12vh;
+        width: 50%;
+        & h2 {
+            background: darkkhaki;
+            padding: 5px 0;
+            border-radius: 3px;
+            box-shadow: 1px 1px 3px;
+        }
         &-title {
             font-family: Raleway;
             text-align: center;
@@ -15,15 +23,30 @@
             margin-bottom: 80px;
             &-fact {
                 font-family: Rubik;
-
+                font-size: 1.25rem;
             }
+        }
+        @media screen and (max-width: 1100px) {
+            width: 60%;
+        }
+        @media screen and (max-width: 1000px) {
+            width: 70%;
+        }
+        @media screen and (max-width: 900px) {
+            width: 75%;
+        }
+        @media screen and (max-width: 800px) {
+            width: 80%;
+        }
+        @media screen and (max-width: 700px) {
+            width: 85%;
         }
         &-tech {
             margin: 50px 0;
             text-align: center;
             font-family: Raleway;
             &-icons {
-                width: 50%;
+                // width: 50%;
                 justify-items: center;
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -38,43 +61,13 @@
                         height: auto;
                     }
                 }
-                @media screen and (max-width: 1100px) {
-                    width: 60%;
-                }
-                @media screen and (max-width: 1000px) {
-                    width: 70%;
-                }
-                @media screen and (max-width: 900px) {
-                    width: 75%;
-                }
-                @media screen and (max-width: 800px) {
-                    width: 80%;
-                }
-                @media screen and (max-width: 700px) {
-                    width: 85%;
-                }
             }
         }
         &-role {
-            width: 50%;
+            // width: 50%;
             margin: auto;
             text-align: left;
             font-family: Raleway;
-            @media screen and (max-width: 1100px) {
-                width: 60%;
-            }
-            @media screen and (max-width: 1000px) {
-                width: 70%;
-            }
-            @media screen and (max-width: 900px) {
-                width: 75%;
-            }
-            @media screen and (max-width: 800px) {
-                width: 80%;
-            }
-            @media screen and (max-width: 700px) {
-                width: 85%;
-            }
         }
     }
 }

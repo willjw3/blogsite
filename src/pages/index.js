@@ -45,13 +45,10 @@ const IndexPage = ({data}) => {
             <div className="index-main-body-postlist">
               <h3>Web Development</h3>
               <PostList posts={webDevelopmentPosts} />
-              <hr/>
               <h3>Data Science</h3>
               <PostList posts={dataSciencePosts} />
-              <hr/>
               <h3>Mathematics</h3>
               <PostList posts={mathematicsPosts} />
-              <hr/>
               <div>
                 <h3>All Topics</h3>
                 {
@@ -61,7 +58,7 @@ const IndexPage = ({data}) => {
                 }
               </div>
               <hr/>
-              <Link to="/archives"><h3 style={{marginTop: "50px"}}>Browse Archives</h3></Link>
+              <Link to="/archives"><h3 style={{marginTop: "50px", background: "none", textDecoration: "underline", boxShadow: "none"}}>Browse Archives</h3></Link>
             </div> 
           </div>
         </div>

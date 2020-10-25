@@ -9,7 +9,7 @@ const PostBlock = ({post}) => {
     return (
         <div className="postblock">
             <Link to={post.node.fields.slug}>
-                <h1>{post.node.frontmatter.title}</h1>
+                <h2>{post.node.frontmatter.title}</h2>
             </Link>
             <small>{post.node.frontmatter.date}</small>
             <hr/>

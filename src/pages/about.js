@@ -25,7 +25,7 @@ const About = ({data}) => {
         <Layout>
             <div className="about">
                 <div className="about-main">
-                    <h1 className="about-main-title">Who I Am</h1>
+                    {/* <h2 className="about-main-title">Who I Am</h2> */}
                     <div className="about-main-facts">
                         <p className="about-main-facts-fact"><strong>Origin:</strong> California, USA</p>
                         <p className="about-main-facts-fact"><strong>Current Location:</strong> Tokyo, Japan</p>
