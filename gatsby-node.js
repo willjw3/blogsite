@@ -72,7 +72,13 @@ exports.createPages = async ({ graphql, actions }) => {
     })
 
     const postsPerPage = 3
-    const numPages = Math.ceil(result.data.allMarkdownRemark.edges.length / postsPerPage)
+    const articles = []
+    result.data.allMarkdownRemark.edges.forEach(edge => {
+      if (edge.node.frontmatter.pagetype === 'article') {
+        articles.push(edge)
+      }
+    })
+    const numPages = Math.ceil(articles.length / postsPerPage)
 
     Array.from({ length: numPages }).forEach((_, i) => {
       createPage({

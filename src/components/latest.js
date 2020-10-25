@@ -5,7 +5,7 @@ import "../styles/latest.scss"
 const Latest = () => {
     const data = useStaticQuery(graphql`
         query LatestQuery {
-            allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC}) {
+            allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/articles/"}} sort: { fields: [frontmatter___date], order: DESC}) {
                 edges {
                     node {
                         html 
@@ -23,12 +23,8 @@ const Latest = () => {
             }
         }
     `)
-    const taggedMarkdown = []
-    data.allMarkdownRemark.edges.forEach(markdownFile => {
-      if (markdownFile.node.frontmatter.pagetype === 'article'){
-        taggedMarkdown.push(markdownFile)
-      }
-    })
+
+    const posts = data.allMarkdownRemark.edges
 
     return (
         <div className="latest">
@@ -36,14 +32,14 @@ const Latest = () => {
                 <h3>The Latest</h3>
             </div>
             <div className="latest-posts">
-                <Link id="link1" to={taggedMarkdown[0].node.fields.slug}>
-                    <small>{taggedMarkdown[0].node.frontmatter.title} <span>({taggedMarkdown[0].node.frontmatter.tags[0]})</span></small>
+                <Link id="link1" to={posts[0].node.fields.slug}>
+                    <small>{posts[0].node.frontmatter.title} <span>({posts[0].node.frontmatter.tags[0]})</span></small>
                 </Link>
-                <Link id="link2" to={taggedMarkdown[1].node.fields.slug}>
-                    <small>{taggedMarkdown[1].node.frontmatter.title} <span>({taggedMarkdown[1].node.frontmatter.tags[0]})</span></small>
+                <Link id="link2" to={posts[1].node.fields.slug}>
+                    <small>{posts[1].node.frontmatter.title} <span>({posts[1].node.frontmatter.tags[0]})</span></small>
                 </Link>
-                <Link id="link3" to={taggedMarkdown[2].node.fields.slug}>
-                    <small>{taggedMarkdown[2].node.frontmatter.title} <span>({taggedMarkdown[2].node.frontmatter.tags[0]})</span></small>
+                <Link id="link3" to={posts[2].node.fields.slug}>
+                    <small>{posts[2].node.frontmatter.title} <span>({posts[2].node.frontmatter.tags[0]})</span></small>
                 </Link>
             </div>
         </div>
