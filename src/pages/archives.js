@@ -9,7 +9,12 @@ import "../styles/homearchives.scss";
 
 const Archives = ({data}) => {
     const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges;
+    const taggedMarkdown = []
+    data.allMarkdownRemark.edges.forEach(markdownFile => {
+      if (markdownFile.node.frontmatter.pagetype === 'article'){
+        taggedMarkdown.push(markdownFile)
+      }
+    })
     const { totalCount } = data.allMarkdownRemark;
     const tagHeader = `${totalCount} post${totalCount === 1 ? "" : "s"}`;
 
@@ -24,7 +29,7 @@ const Archives = ({data}) => {
             <div className="archives">
                 <div className="archives-body">
                   <i><h2>{tagHeader}</h2></i>
-                  {posts.map((post, i) => {
+                  {taggedMarkdown.map((post, i) => {
                       const tags = post.node.frontmatter.tags;
                       return (
                           <div className="archives-body-post" key={i}>

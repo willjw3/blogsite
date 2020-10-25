@@ -9,7 +9,12 @@ import "../styles/archive.scss";
 
 const ArchiveTemplate = (props) => {
     const siteTitle = props.data.site.siteMetadata.title
-    const posts = props.data.allMarkdownRemark.edges;
+    const taggedMarkdown = []
+    props.data.allMarkdownRemark.edges.forEach(markdownFile => {
+      if (markdownFile.node.frontmatter.pagetype === 'article'){
+        taggedMarkdown.push(markdownFile)
+      }
+    })
     const { totalCount } = props.data.allMarkdownRemark;
     const tagHeader = `${totalCount} post${totalCount === 1 ? "" : "s"}`;
 
@@ -25,7 +30,7 @@ const ArchiveTemplate = (props) => {
             <div className="archives">
                 <div className="archives-body">
                   <i><h2>{tagHeader}</h2></i>
-                  {posts.map((post, i) => {
+                  {taggedMarkdown.map((post, i) => {
                       const tags = post.node.frontmatter.tags;
                       return (
                           <div className="archives-body-post" key={i}>

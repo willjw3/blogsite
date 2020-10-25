@@ -5,7 +5,6 @@ import Footer from "../components/footer"
 import "../styles/about.scss"
 
 const About = ({data}) => {
-    console.log(data)
     const siteTitle = data.site.siteMetadata.title
     const professionalTech = []
     const infoRole = []
