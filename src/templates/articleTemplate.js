@@ -53,8 +53,8 @@ const Article = ({data}) => {
                             techIconPaths.length ?
                             techIconPaths.map((icon, i) => {
                                 return (
-                                    <div className="article-main-icons-icon">
-                                        <img key={i} src={icon} alt={icon}/>
+                                    <div key={i} className="article-main-icons-icon">
+                                        <img src={icon} alt={icon}/>
                                     </div>
                                 ) 
                             }) : ""
