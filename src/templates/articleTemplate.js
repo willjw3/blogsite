@@ -42,7 +42,8 @@ const Article = ({data}) => {
                     }
                     <div className="article-main-body" dangerouslySetInnerHTML={{__html: post.html}} />
                     <div className="article-main-tags">
-                        {post.frontmatter.tags.map(tag => {
+                        {post.frontmatter.tags && 
+                            post.frontmatter.tags.map(tag => {
                             return (<PostTag tag={tag} />)
                         })}
                     </div>

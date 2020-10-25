@@ -37,6 +37,7 @@ exports.createPages = async ({ graphql, actions }) => {
     `)
   
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      if (node.frontmatter.pagetype === 'article') {
         createPage({
           path: node.fields.slug,
           component: articleTemplate,
@@ -44,6 +45,7 @@ exports.createPages = async ({ graphql, actions }) => {
             slug: node.fields.slug
           }
         }); 
+      }   
     })
 
     // Tag pages:

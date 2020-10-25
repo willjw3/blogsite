@@ -13,6 +13,7 @@ const Latest = () => {
                             title 
                             tags
                             date
+                            pagetype
                         }
                         fields {
                             slug
@@ -22,22 +23,27 @@ const Latest = () => {
             }
         }
     `)
-    const posts = data.allMarkdownRemark.edges
-    
+    const taggedMarkdown = []
+    data.allMarkdownRemark.edges.forEach(markdownFile => {
+      if (markdownFile.node.frontmatter.pagetype === 'article'){
+        taggedMarkdown.push(markdownFile)
+      }
+    })
+
     return (
         <div className="latest">
             <div className="latest-title">
                 <h3>The Latest</h3>
             </div>
             <div className="latest-posts">
-                <Link id="link1" to={posts[0].node.fields.slug}>
-                    <small>{posts[0].node.frontmatter.title} <span>({posts[0].node.frontmatter.tags[0]})</span></small>
+                <Link id="link1" to={taggedMarkdown[0].node.fields.slug}>
+                    <small>{taggedMarkdown[0].node.frontmatter.title} <span>({taggedMarkdown[0].node.frontmatter.tags[0]})</span></small>
                 </Link>
-                <Link id="link2" to={posts[1].node.fields.slug}>
-                    <small>{posts[1].node.frontmatter.title} <span>({posts[1].node.frontmatter.tags[0]})</span></small>
+                <Link id="link2" to={taggedMarkdown[1].node.fields.slug}>
+                    <small>{taggedMarkdown[1].node.frontmatter.title} <span>({taggedMarkdown[1].node.frontmatter.tags[0]})</span></small>
                 </Link>
-                <Link id="link3" to={posts[2].node.fields.slug}>
-                    <small>{posts[2].node.frontmatter.title} <span>({posts[2].node.frontmatter.tags[0]})</span></small>
+                <Link id="link3" to={taggedMarkdown[2].node.fields.slug}>
+                    <small>{taggedMarkdown[2].node.frontmatter.title} <span>({taggedMarkdown[2].node.frontmatter.tags[0]})</span></small>
                 </Link>
             </div>
         </div>

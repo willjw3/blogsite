@@ -1,6 +1,6 @@
 ---
 title: "My First DIY Computer"
-date: "2020-10-22"
+date: "2020-09-22"
 published: true
 tags: ["technology", "computer"]
 image: ../src/images/diy_computer.jpg

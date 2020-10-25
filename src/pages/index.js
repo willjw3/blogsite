@@ -13,25 +13,28 @@ const IndexPage = ({data}) => {
   const allTags = data.allMarkdownRemark.group.map(tag => {
     return tag.fieldValue
   })
+
+  const taggedMarkdown = []
+  data.allMarkdownRemark.edges.forEach(markdownFile => {
+    if (markdownFile.node.frontmatter.pagetype === 'article'){
+      taggedMarkdown.push(markdownFile)
+    }
+  })
+  
   const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges 
   const dataSciencePosts = []
   const webDevelopmentPosts = []
   const mathematicsPosts = []
-  const technologyPosts = []
 
-  for (let i=0; i<posts.length; i++) {
-    if (posts[i].node.frontmatter.tags.includes("data-science") && dataSciencePosts.length < 2) {
-      dataSciencePosts.push(posts[i])
+  for (let i=0; i<taggedMarkdown.length; i++) {
+    if (taggedMarkdown[i].node.frontmatter.tags.includes("data-science") && dataSciencePosts.length < 2) {
+      dataSciencePosts.push(taggedMarkdown[i])
     }
-    if (posts[i].node.frontmatter.tags.includes("web-development") && webDevelopmentPosts.length < 2) {
-      webDevelopmentPosts.push(posts[i])
+    if (taggedMarkdown[i].node.frontmatter.tags.includes("web-development") && webDevelopmentPosts.length < 2) {
+      webDevelopmentPosts.push(taggedMarkdown[i])
     }
-    if (posts[i].node.frontmatter.tags.includes("mathematics") && mathematicsPosts.length < 1) {
-      mathematicsPosts.push(posts[i])
-    }
-    if (posts[i].node.frontmatter.tags.includes("technology") && technologyPosts.length < 1) {
-      technologyPosts.push(posts[i])
+    if (taggedMarkdown[i].node.frontmatter.tags.includes("mathematics") && mathematicsPosts.length < 1) {
+      mathematicsPosts.push(taggedMarkdown[i])
     }
   }
   
@@ -43,7 +46,7 @@ const IndexPage = ({data}) => {
           <Latest />
           <div className="index-main-body">
             <div className="index-main-body-post">
-              <PostBlock post={posts[0]} />
+              <PostBlock post={taggedMarkdown[0]} />
             </div>
             <div className="index-main-body-postlist">
               <h3>Web Development</h3>
@@ -52,17 +55,14 @@ const IndexPage = ({data}) => {
               <h3>Data Science</h3>
               <PostList posts={dataSciencePosts} />
               <hr/>
-              <h3>Mathematics & Physics</h3>
+              <h3>Mathematics</h3>
               <PostList posts={mathematicsPosts} />
-              <hr/>
-              <h3>Technology</h3>
-              <PostList posts={technologyPosts} />
               <hr/>
               <div>
                 <h3>All Topics</h3>
                 {
-                  allTags.map(tag => {
-                    return <small style={{display: "block"}}>{tag}</small>
+                  allTags.map((tag, i) => {
+                    return <Link key={i} to={`/tags/${tag}`}><small style={{display: "block"}}>{tag}</small></Link> 
                   })
                 }
               </div>
