@@ -1,73 +1,174 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
 .about {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     min-height: 100vh;
     &-main {
-        margin: auto;
         margin-top: 12vh;
-        width: 50%;
-        & h2 {
-            background: darkkhaki;
-            padding: 5px 0;
-            border-radius: 3px;
-            box-shadow: 1px 1px 3px;
-        }
-        &-title {
-            font-family: Raleway;
-            text-align: center;
-            margin-top: 30px;
-        }
-        &-facts {
-            text-align: center;
-            margin-bottom: 80px;
-            &-fact {
-                font-family: Rubik;
-                font-size: 1.25rem;
-            }
-        }
-        @media screen and (max-width: 1100px) {
+        &-body {
+            margin: 0 auto;
             width: 60%;
-        }
-        @media screen and (max-width: 1000px) {
-            width: 70%;
-        }
-        @media screen and (max-width: 900px) {
-            width: 75%;
-        }
-        @media screen and (max-width: 800px) {
-            width: 80%;
-        }
-        @media screen and (max-width: 700px) {
-            width: 85%;
-        }
-        &-tech {
-            margin: 50px 0;
-            text-align: center;
-            font-family: Raleway;
-            &-icons {
-                // width: 50%;
-                justify-items: center;
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-                grid-template-rows: auto;
-                gap: 40px;
-                margin: 50px auto;
-                font-family: Rubik;
-                &-icon {
-                    width: 100px;
-                    & img {
-                        max-width: 100%;
-                        height: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &-post {
+                width: 60%;
+                margin: 0 auto;
+                &-tech {
+                    margin: 50px 0;
+                    text-align: center;
+                    font-family: Raleway;
+                    &-icons {
+                        justify-items: center;
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                        grid-template-rows: auto;
+                        gap: 40px;
+                        margin: 50px auto;
+                        font-family: Rubik;
+                        &-icon {
+                            width: 100px;
+                            & img {
+                                max-width: 100%;
+                                height: auto;
+                            }
+                        }
                     }
+                    & h2 {
+                        font-family: Rubik;
+                        font-weight: 200;
+                    }
+                } 
+                &-role {
+                    margin: auto;
+                    text-align: left;
+                    font-family: Raleway;
+                }   
+            }
+            &-sidebar {
+                width: 30%;
+                margin: 0, auto;
+                text-align: center;
+                padding: 0 60px;
+                &-image {
+                    width: 70%;
+                    margin: auto;
+                    & img {
+                        border-radius: 50%;
+                    }
+                }
+                & h2, h3 {
+                    font-family: Rubik;
+                    font-weight: 200;
+                    background: darkkhaki;
+                    padding: 5px 0;
+                    border-radius: 3px;
+                    box-shadow: 1px 1px 3px;
+                }
+                & h4 {
+                    font-family: Rubik;
+                    font-weight: 200;
+                    margin-bottom: 0;
+                }
+                & a {
+                    text-decoration: none;
+                    color: #010101;
+                }
+                & small {
+                    font-family: Rubik;
+                    font-style: italic;
+                }
+                & p {
+                    font-family: Rubik;
                 }
             }
         }
-        &-role {
-            // width: 50%;
-            margin: auto;
-            text-align: left;
-            font-family: Raleway;
+    }
+}
+
+@media only screen and (max-width: 1500px) {
+    .about{
+        &-main {
+            &-body {
+                width: 65%;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 1400px) {
+    .about{
+        &-main {
+            &-body {
+                width: 70%;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 1300px) {
+    .about{
+        &-main {
+            &-body {
+                width: 75%;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .about{
+        &-main {
+            &-body {
+                width: 80%;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 1100px) {
+    .about {
+        &-main {
+            &-body {
+                width: 85%;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .about {
+        &-main {
+            &-body {
+                width: 90%;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 850px) {
+    .about {
+        &-main {
+            &-body {
+                flex-direction: column-reverse;
+                &-post {
+                    width: 90%;
+                }
+                &-sidebar {
+                    margin: 30px auto;
+                    width: 60%;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 500px) {
+    .about{
+        &-main {
+            &-body {
+                &-sidebar {
+                    width: 70%;
+                }
+            }
         }
     }
 }

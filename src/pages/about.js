@@ -1,12 +1,16 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Footer from "../components/footer"
+import Latest from "../components/latest"
 import SEO from "../components/seo"
+import Img from "gatsby-image"
 import "../styles/about.scss"
 
+
 const About = ({data}) => {
-    const siteTitle = data.site.siteMetadata.title
+  
+  const siteTitle = data.site.siteMetadata.title
     const professionalTech = []
     const infoRole = []
     const infoProgress = []
@@ -21,74 +25,90 @@ const About = ({data}) => {
             infoProgress.push(item)
         }
     })
-    
-    return (
-        <Layout>
-            <SEO title="About" />
-            <div className="about">
-                <div className="about-main">
-                    {/* <h2 className="about-main-title">Who I Am</h2> */}
-                    <div className="about-main-facts">
-                        <p className="about-main-facts-fact"><strong>Origin:</strong> California, USA</p>
-                        <p className="about-main-facts-fact"><strong>Current Location:</strong> Tokyo, Japan</p>
-                        <p className="about-main-facts-fact"><strong>Occupation:</strong> Web Developer</p>
-                        <p className="about-main-facts-fact"><strong>Education:</strong> Bachelor of Science - Physics</p>
+  
+  return (
+    <Layout>
+      <SEO title="About" />
+      <div className="about">
+        <div className="about-main">
+          <Latest />
+          <div className="about-main-body">
+            <div className="about-main-body-post">
+                <div className="about-main-body-post-tech">
+                    <h2 className="about-main-body-post-tech-title">Tech I Work With</h2>
+                    <div className="about-main-body-post-tech-icons">
+                        {
+                            professionalTech.length && 
+                            professionalTech.map((tech, i) => {
+                                return (
+                                    <div key={i} className="about-main-body-post-tech-icons-icon">
+                                        <img src={tech.node.frontmatter.image.publicURL} alt={tech.node.frontmatter.title}/>
+                                        <small>{tech.node.frontmatter.title}</small>
+                                    </div>
+                                    
+                                )
+                            })
+                        }
                     </div>
-                    <div className="about-main-tech">
-                        <h2 className="about-main-tech-title">Tech I Use Professionally</h2>
-                        <div className="about-main-tech-icons">
-                            {
-                                professionalTech.length && 
-                                professionalTech.map((tech, i) => {
-                                    return (
-                                        <div key={i} className="about-main-tech-icons-icon">
-                                            <img src={tech.node.frontmatter.image.publicURL} alt={tech.node.frontmatter.title}/>
-                                            <small>{tech.node.frontmatter.title}</small>
-                                        </div>
-                                        
-                                    )
-                                })
-                            }
-                        </div>
-                        <div className="about-main-role">
-                           <div dangerouslySetInnerHTML={{__html: infoRole[0].node.html}} />
-                           <div dangerouslySetInnerHTML={{__html: infoProgress[0].node.html}} />
-                        </div>
+                    <div className="about-main-body-post-role">
+                        <div dangerouslySetInnerHTML={{__html: infoRole[0].node.html}} />
+                        <div dangerouslySetInnerHTML={{__html: infoProgress[0].node.html}} />
                     </div>
-                    
                 </div>
-                <Footer content="light" siteTitle={siteTitle}/>
             </div>
-        </Layout>
-    )
+            <div className="about-main-body-sidebar">
+                <div className="about-main-body-sidebar-image">
+                    <Img fluid={data.profilePic.childImageSharp.fluid} />
+                </div>
+                <div className="about-main-facts-list">
+                    <h4>{siteTitle}</h4>
+                    <p className="about-main-facts-fact"><strong>Origin:</strong> California, USA</p>
+                    <p className="about-main-facts-fact"><strong>Current Location:</strong> Tokyo, Japan</p>
+                    <p className="about-main-facts-fact"><strong>Occupation:</strong> Web Developer</p>
+                    <p className="about-main-facts-fact"><strong>Education:</strong> Bachelor of Science - Physics</p>
+                </div>
+            </div> 
+          </div>
+        </div>
+        <Footer content="light" siteTitle={siteTitle} />
+    </div>  
+  </Layout>
+  )
 }
 
 export default About
 
 export const pageQuery = graphql`
 query aboutQuery {
-    site {
-        siteMetadata {
-          title
+  site {
+    siteMetadata {
+      title
+    }
+  }
+    profilePic: file(relativePath: {eq: "bt.jpg"}) {
+        childImageSharp {
+            fluid(maxWidth: 800, quality: 100) {
+                ...GatsbyImageSharpFluid
+            }
         }
-      }
-      allMarkdownRemark(sort: { fields: frontmatter___id, order: ASC}) {
+    }
+    allMarkdownRemark(sort: { fields: frontmatter___id, order: ASC}) {
         totalCount
         edges {
-          node {
+            node {
             html 
             frontmatter {
-              title 
-              image {
+                title 
+                image {
                 publicURL
-              }
-              pagetype
+                }
+                pagetype
             }
             fields {
-              slug
+                slug
             }
-          }
+            }
         }
-      }
+        }
 }
-`
+` 
