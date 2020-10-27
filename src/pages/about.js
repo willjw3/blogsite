@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Footer from "../components/footer"
+import SEO from "../components/seo"
 import "../styles/about.scss"
 
 const About = ({data}) => {
@@ -23,6 +24,7 @@ const About = ({data}) => {
     
     return (
         <Layout>
+            <SEO title="About" />
             <div className="about">
                 <div className="about-main">
                     {/* <h2 className="about-main-title">Who I Am</h2> */}
