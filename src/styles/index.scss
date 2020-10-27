@@ -26,6 +26,7 @@ html, body {
                 padding: 0 60px;
                 & h2, h3 {
                     font-family: Rubik;
+                    font-weight: 200;
                     background: darkkhaki;
                     padding: 5px 0;
                     border-radius: 3px;
@@ -118,6 +119,17 @@ html, body {
                 &-postlist {
                     margin: 30px auto;
                     width: 60%;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 500px) {
+    .index {
+        &-main {
+            &-body {
+                &-postlist {
+                    width: 70%;
                 }
             }
         }
