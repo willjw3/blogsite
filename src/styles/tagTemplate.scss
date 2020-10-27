@@ -3,14 +3,13 @@
     flex-direction: column;
     justify-content: space-between;
     min-height: 100vh;
-    background: black;
     &-body {
         margin: 15vh auto;
         width: 50%;
         & h2 {
             margin-bottom: 40px;
             font-family: Rubik;
-            color: lightgray;
+            color: darkslategray;
             font-weight: 200;
             font-style: normal;
             text-align: center;   
@@ -30,7 +29,6 @@
                 }
             }
             &-date {
-                color: white;
                 font-family: Rubik;
             }
             &-under {
@@ -39,7 +37,6 @@
             & p {
                 margin-bottom: 0;
                 margin-top: 0;
-                color: white;
                 font-family: Raleway;
             }
             & small {

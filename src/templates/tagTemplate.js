@@ -12,7 +12,7 @@ const TagTemplate = ({pageContext, data}) => {
     const posts = data.allMarkdownRemark.edges;
     const { tag } = pageContext;
     const { totalCount } = data.allMarkdownRemark;
-    const tagHeader = `TOPIC: "${tag}" (${totalCount} post${totalCount === 1 ? "" : "s"})`;
+    const tagHeader = `${tag}: ${totalCount} post${totalCount === 1 ? "" : "s"}`;
 
     return (
         <Layout>
@@ -51,7 +51,7 @@ const TagTemplate = ({pageContext, data}) => {
                     )
                 })}
                 </div>
-                <Footer content="dark" siteTitle={siteTitle} />
+                <Footer content="light" siteTitle={siteTitle} />
             </div>
         </Layout>
     );
