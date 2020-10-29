@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import GH from "../images/github.svg"
@@ -10,7 +10,8 @@ import "../styles/header.scss"
 
 
 
-const Header = ({ siteTitle }) => {
+const Header = ({ siteTitle, isOpen }) => {
+
   return (
     <div className="header">
       <div className="header-content">
@@ -42,6 +43,9 @@ const Header = ({ siteTitle }) => {
           <Link className="header-links-internal-link" to="/tags/mathematics">Mathematics</Link>
           <Link className="header-links-internal-link" to="/about">About</Link>
         </div>
+      </div>
+      <div className="header-burger">
+        <button className="header-burger-btn" onClick={isOpen}>MENU</button>
       </div>
     </div>
   )
