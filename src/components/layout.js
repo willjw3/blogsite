@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, {useState, useEffect} from "react"
+import React, {useState} from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Header from "./header"
@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
       }
     }
   `)
-  const [showSidebar, setShowSidebar] = useState(false)
+  
   const [sidebarClass, setSidebarClass] = useState("sidebar")
 
   const handleSlide = () => {
@@ -37,7 +37,7 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} isOpen={handleSlide} />
         <main>{children}</main>
         <div className={sidebarClass}>
-          <Link to="/tags/web-development"><h3 className="sidebar-link" onClick={handleClose}>Web Development</h3></Link>
+          <Link to="/tags/web-development"><h3 className="sidebar-link">Web Development</h3></Link>
           <Link to="/tags/data-science"><h3 className="sidebar-link">Data Science</h3></Link>
           <Link to="/tags/mathematics"><h3 className="sidebar-link">Mathematics</h3></Link>
           <Link to="/about"><h3 className="sidebar-link">About</h3></Link>
