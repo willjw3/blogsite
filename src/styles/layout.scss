@@ -55,7 +55,8 @@ a {
     justify-content: center;
     animation: slide-out 0.5s forwards;
     animation-delay: .05s;
-   
+}
+
 @keyframes slide-in {
     100% { left: 0; }
 }
