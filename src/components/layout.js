@@ -40,6 +40,7 @@ const Layout = ({ children }) => {
           <Link to="/tags/web-development"><h3 className="sidebar-link">Web Development</h3></Link>
           <Link to="/tags/data-science"><h3 className="sidebar-link">Data Science</h3></Link>
           <Link to="/tags/mathematics"><h3 className="sidebar-link">Mathematics</h3></Link>
+          <Link to="/archives"><h3 className="sidebar-link">Browse Archives</h3></Link>
           <Link to="/about"><h3 className="sidebar-link">About</h3></Link>
           <button className="sidebar-btn" onClick={handleClose}>CLOSE</button>
         </div>
