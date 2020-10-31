@@ -5,6 +5,7 @@ import PostTag from "../components/posttag";
 import Footer from "../components/footer";
 import Img from "gatsby-image"
 import SEO from "../components/seo";
+import "katex/dist/katex.min.css"
 import "../styles/article.scss";
 
 const Article = ({data}) => {
