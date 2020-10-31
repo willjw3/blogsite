@@ -25,7 +25,7 @@ $$
 4 \ suits \ * \ \frac{13 \ cards}{suit} \ = \ 52 \ cards
 $$
 
-First, we think about the number of ways to choose any specific rank. There are 52 cards in a deck, so there are 52 ways to choose any card. Since each rank is repeated four times, there are 52/4 = 13 ways to choose a rank; If we were to consider a card of rank 7, we could pick any of the following four cards: 7 of hearts, 7 of diamonds, 7 of clubs, and 7 of spades. 
+First, we think about the number of ways to choose any specific rank. There are 52 cards in a deck, so there are 52 ways to choose any card. Since each rank is repeated four times, there are 52/4 = 13 ways to choose a rank; If we were to consider a card of rank 7, we could pick any of the following four cards: 7 of hearts, 7 of diamonds, 7 of clubs, or 7 of spades. 
 
 Next, we think about the number of ways to choose two cards of a specific rank out of the four cards of that rank in the deck, which can be represented by the binomial coefficient $\binom{4}{2}$ (read "four choose two").
 
