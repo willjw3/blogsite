@@ -2,22 +2,26 @@
 title: "Poker Hand Probabilities: One Pair"
 date: "2020-10-31"
 published: true
-tags: ["mathematics", "probability", "stat110"]
+tags: ["mathematics", "probability", "stat-110"]
 image: ../src/images/playing_cards.jpg
 pagetype: "article"
 ---
 
-Calculating the probability of a full house is shown in chapter 1 of Harvard's *Stat110 (Probability)* course. The total number of possible five-card hands is given by $\binom{52}{5}$. Calculating the probability of a full house is pretty straightforward; get the number of ways to choose three of a kind, multiply it by the number of ways to choose a pair from the remaining cards, and divide that product by the total number of possible hands. It's usually written as
+Calculating the probability of a full house is shown in chapter 1 of Harvard's *Stat 110 (Probability)* [course](https://projects.iq.harvard.edu/stat110), and is pretty straightforward. First, get the number of ways to choose three of a kind, multiply it by the number of ways to choose a pair from the remaining cards, and divide that product by the total number of possible hands. The calculation is shown below.
 
 $$ 
 P(full \ house) = \frac{13\binom{4}{3}12\binom{4}{2}}{\binom{52}{5}}
 $$
 
-which gives ~0.00144. A small probability, as you'd expect for such a powerful poker hand. 
+which gives ~0.00144. A small probability, as you'd expect for such a powerful poker hand.
 
-So, how is the calculation done? 
+Binomial coefficient calculations are done using the binomial coefficient formula:
 
-Looking at the simpler example of calculating the probability of a much-weaker hand should clear things up a bit. Let's focus on calculating the probability of holding a pair if dealt a 5-card poker hand. 
+$$
+\binom{n}{k} \ = \ \frac{n!}{k!(n-k)!}
+$$
+
+Now, let's look at the example of calculating the probability of holding a single pair if dealt a 5-card poker hand. 
 
 There are 13 ranks in a deck of playing cards: *Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King*. And there are 4 suits: *Hearts, Diamonds, Clubs, Spades*, with each suit being comprised of 13 cards, each one representing a rank. So, the total number in the deck is 
 
@@ -31,7 +35,7 @@ Next, we think about the number of ways to choose two cards of a specific rank o
 
 Then, considering the other three cards, none of which can be the same rank as the pair (otherwise, our hand would not be only a pair), we have 12 ranks to choose the other 3 cards from $\binom{12}{3}$. And, for each card, we consider the number of ways to choose its suit: $\binom{4}{1}$
 
-Finally, we get the probability by dividing the number of ways to get a pair by the total number of ways to get a five-card hand from the deck, $\binom{52}{5}$ (as mentioned above).
+Finally, we get the probability by dividing the number of ways to get a pair by the total number of ways to get a five-card hand from the deck, $\binom{52}{5}$.
 
 So, the probability of holding a pair if dealt a 5-card hand is
 
