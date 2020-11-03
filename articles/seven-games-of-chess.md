@@ -33,7 +33,10 @@ Think of the ways in which A can get 4 points:
 Combining the possible results is straightforward.
 
 $$
-\frac{7!}{4!0!3!} \ + \ \frac{7!}{3!2!2!} \ + \ \frac{7!}{2!4!1!} \ + \ \frac{7!}{1!6!0!} \ + \ = \ 357
+\frac{7!}{4!0!3!} \ + \ \frac{7!}{3!2!2!} \ + \ \frac{7!}{2!4!1!} \ + \ \frac{7!}{1!6!0!}
+$$ 
+$$
+\ = \ 357
 $$
 
 **(c) Finally, consider the tournament as being a best-of-seven tournament in which the games will cease either when one player reaches a total of 4 points, or when 7 games have been played, whichever comes first. Of course, this means it's possible for the tournament to end in 4 games if one player wins the first four. How many possible outcomes are there if the tournament lasts 7 games and A wins by a score of 4 to 3?**
@@ -53,7 +56,10 @@ The key to this problem is implementing the fact that A cannont have 4 points un
 Combining the possible results gives:
 
 $$
-\frac{6!}{3!0!3!} \ + \frac{6!}{2!2!2!} \ + \frac{6!}{1!4!1!} \ + \frac{6!}{0!6!0!} \ + \frac{6!}{3!1!2!} \ + \frac{6!}{2!3!1!} \ + \frac{6!}{1!5!0!} \ = \ 267
+\frac{6!}{3!0!3!} \ + \frac{6!}{2!2!2!} \ + \frac{6!}{1!4!1!} \ + \frac{6!}{0!6!0!}
+$$ 
+$$
+\ + \ \frac{6!}{3!1!2!} \ + \frac{6!}{2!3!1!} \ + \frac{6!}{1!5!0!} \ = \ 267
 $$
 
 
