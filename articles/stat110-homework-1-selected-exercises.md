@@ -47,3 +47,27 @@ $$
 If the answer to Part (b) were $\binom{52}{13}^4 \ = \ \binom{52}{13}\binom{52}{13}\binom{52}{13}\binom{52}{13}$,
 
 that would mean that we were replacing the cards dealt to players with exact copies so that they may be dealt to other players, but if there's only one deck, this isn't happening. That's why $\binom{52}{13}^4$ is not the correct answer to Part (b).
+
+---
+
+**14. You are ordering two pizzas. A pizza can be small, medium, large, or extra-large, with any combinations of 8 possible toppings (getting no toppings is allowed, as is getting all 8). How many possibilities are there for your two pizzas?**
+
+For each pizza, you have $\binom{4}{1}$ ways to choose a size. Then, you have 9 possible topping combinations, including the zero-toppings option.
+
+$$
+4\binom{8}{8} \ + \ 4\binom{8}{7} + \ 4\binom{8}{6} + \ 4\binom{8}{5}  
+$$
+$$
++ \ 4\binom{8}{4} \ + \ 4\binom{8}{3}\ + \ 4\binom{8}{2}\ + \ 4\binom{8}{1}
+$$
+$$
+\ + \ 4\binom{8}{0}
+$$
+
+Taking into account both pizzas and the fact that $\binom{n}{k} \ = \ \binom{n}{n-k}$, we have
+
+ $\left [4\left [2\binom{8}{8}+2\binom{8}{7}+2\binom{8}{6}+2\binom{8}{5}+\binom{8}{4} \right ] \right ]^2$
+
+ $= 1048576$.
+
+ Adjusting for overcounting since the order of pizzas doesn't matter, we finally have $\frac{1048576}{2} \ = \ 524288$
