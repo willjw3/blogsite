@@ -7,6 +7,8 @@ image: ../src/images/chess-match.jpg
 pagetype: "article"
 ---
 
+**Warning: Spoilers Follow**
+
 A homework problem from [Harvard's Stat 110](https://projects.iq.harvard.edu/stat110) course has two chess players ready to play 7 games. The possible outcomes for each game are Win (1 point), Draw (0.5 points), and Loss (0 points). If all seven games were to be played regardless of the outcomes of the individual games, it's possible that one player could have 7 points and the other 0 points. We'll call the two players A and B.
 
 **(a) How many possible outcomes for the individual games are there, such that player A has a final result of 3 wins, 2 draws, and 2 losses?**
