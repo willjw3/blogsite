@@ -27,7 +27,7 @@ const IndexPage = ({data}) => {
     if (posts[i].node.frontmatter.tags.includes("web-development") && webDevelopmentPosts.length < 2) {
       webDevelopmentPosts.push(posts[i])
     }
-    if (posts[i].node.frontmatter.tags.includes("mathematics") && mathematicsPosts.length < 1) {
+    if (posts[i].node.frontmatter.tags.includes("mathematics") && mathematicsPosts.length < 2) {
       mathematicsPosts.push(posts[i])
     }
   }
