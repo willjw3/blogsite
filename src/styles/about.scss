@@ -1,174 +1,101 @@
-html, body {
-    margin: 0;
-    padding: 0;
+
+
+.pimg1, .pimg2, .pimg3 {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: .8;
 }
 
-.about {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.pimg1 {
+    background-image: url("../images/yokohama_bay2200.jpg");
+    min-height: 70vh;
+    margin-top: 80px;
+}
+.pimg2 {
+    background-image: url("../images/shrine2200.jpg");
+    min-height: 70vh;
+}
+.pimg3 {
+    background-image: url("../images/sasazuka2200.jpg");
     min-height: 100vh;
-    &-main {
-        margin-top: 12vh;
-        &-body {
-            margin: 0 auto;
-            width: 60%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            &-post {
-                width: 60%;
-                margin: 0 auto;
-                &-tech {
-                    margin: 50px 0;
-                    text-align: center;
-                    font-family: Raleway;
-                    &-icons {
-                        justify-items: center;
-                        display: grid;
-                        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-                        grid-template-rows: auto;
-                        gap: 40px;
-                        margin: 50px auto;
-                        font-family: Rubik;
-                        &-icon {
-                            width: 100px;
-                            & img {
-                                max-width: 100%;
-                                height: auto;
-                            }
-                        }
-                    }
-                    & h2 {
-                        font-family: Rubik;
-                        font-weight: 200;
-                    }
-                } 
-                &-role {
-                    margin: auto;
-                    text-align: left;
-                    font-family: Raleway;
-                }   
-            }
-            &-sidebar {
-                width: 30%;
-                margin: 0 auto;
-                text-align: center;
-                padding: 0 60px;
-                &-image {
-                    width: 70%;
-                    margin: auto;
-                    & img {
-                        border-radius: 50%;
-                    }
-                }
-                & h2, h3 {
-                    font-family: Rubik;
-                    font-weight: 200;
-                    background: darkkhaki;
-                    padding: 5px 0;
-                    border-radius: 3px;
-                    box-shadow: 1px 1px 3px;
-                }
-                & h4 {
-                    font-family: Rubik;
-                    font-weight: 200;
-                    margin-bottom: 0;
-                }
-                & a {
-                    text-decoration: none;
-                    color: #010101;
-                }
-                & small {
-                    font-family: Rubik;
-                    font-style: italic;
-                }
-                & p {
-                    font-family: Rubik;
-                }
-            }
+}
+
+section {
+    text-align: center;
+    line-height: 1.8em;
+    background-color: #282e34;
+    color: #ddd;
+    font-family: Raleway;
+    padding: 50px 130px;
+}
+
+.ptext {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-family: Raleway;
+    font-size: 2.5vw;
+    letter-spacing: 1.5rem;
+    text-transform: uppercase;
+    text-shadow: 3px 2px #111; 
+}
+
+.ptext h3 {
+    text-transform: none;
+    margin: 30px 0;
+}
+
+.ptext a {
+    color: #fff;
+}
+
+.ptext .border {   
+    padding-bottom: 10px; 
+    border-bottom: 1px solid #fff;
+}
+
+.ptext .border.bottom {
+    font-size: 2vw;
+}
+
+.tech-icons {
+    justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: auto;
+    gap: 40px;
+    margin: 50px auto;
+    font-family: Rubik;
+    &-icon {
+        width: 100px;
+        & img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+}
+
+@media(max-width: 580px) {
+    .pimg1, .pimg2 {
+        min-height: 50vh;
+    }
+    section {
+        padding: 20px 40px;
+    }
+    .ptext {
+        font-size: 3vw;
+        letter-spacing: .75rem;
+    }
+    .tech-icons {
+        &-icon {
+            width: 80px;
         }
     }
 }
 
-@media only screen and (max-width: 1500px) {
-    .about{
-        &-main {
-            &-body {
-                width: 65%;
-            }
-        }
-    }
-}
-@media only screen and (max-width: 1400px) {
-    .about{
-        &-main {
-            &-body {
-                width: 70%;
-            }
-        }
-    }
-}
-@media only screen and (max-width: 1300px) {
-    .about{
-        &-main {
-            &-body {
-                width: 75%;
-            }
-        }
-    }
-}
-@media only screen and (max-width: 1200px) {
-    .about{
-        &-main {
-            &-body {
-                width: 80%;
-            }
-        }
-    }
-}
-@media only screen and (max-width: 1100px) {
-    .about {
-        &-main {
-            &-body {
-                width: 85%;
-            }
-        }
-    }
-}
-@media only screen and (max-width: 1000px) {
-    .about {
-        &-main {
-            &-body {
-                width: 90%;
-            }
-        }
-    }
-}
-@media only screen and (max-width: 850px) {
-    .about {
-        &-main {
-            &-body {
-                flex-direction: column-reverse;
-                &-post {
-                    width: 90%;
-                }
-                &-sidebar {
-                    margin: 30px auto;
-                    width: 60%;
-                }
-            }
-        }
-    }
-}
-@media only screen and (max-width: 500px) {
-    .about{
-        &-main {
-            &-body {
-                &-sidebar {
-                    width: 60%;
-                }
-            }
-        }
-    }
-}

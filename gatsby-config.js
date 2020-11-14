@@ -143,6 +143,7 @@ module.exports = {
       options: {
         fonts: [
           `Bebas Neue`,
+          `Cinzel`,
           `Special Elite`,
           `Lusitana`,
           `Raleway`,

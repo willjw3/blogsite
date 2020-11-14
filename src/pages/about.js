@@ -1,16 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import Footer from "../components/footer"
-import Latest from "../components/latest"
 import SEO from "../components/seo"
-import Img from "gatsby-image"
 import "../styles/about.scss"
 
 
 const About = ({data}) => {
-  
-  const siteTitle = data.site.siteMetadata.title
     const professionalTech = []
     const infoRole = []
     const infoProgress = []
@@ -27,52 +22,58 @@ const About = ({data}) => {
     })
   
   return (
-    <Layout>
-      <SEO title="About" />
-      <div className="about">
-        <div className="about-main">
-          <Latest />
-          <div className="about-main-body">
-            <div className="about-main-body-post">
-                <div className="about-main-body-post-tech">
-                    <h2 className="about-main-body-post-tech-title">Tech I Work With</h2>
-                    <div className="about-main-body-post-tech-icons">
-                        {
-                            professionalTech.length && 
-                            professionalTech.map((tech, i) => {
-                                return (
-                                    <div key={i} className="about-main-body-post-tech-icons-icon">
-                                        <img src={tech.node.frontmatter.image.publicURL} alt={tech.node.frontmatter.title}/>
-                                        <small>{tech.node.frontmatter.title}</small>
-                                    </div>
-                                    
-                                )
-                            })
-                        }
-                    </div>
-                    <div className="about-main-body-post-role">
-                        <div dangerouslySetInnerHTML={{__html: infoRole[0].node.html}} />
-                        <div dangerouslySetInnerHTML={{__html: infoProgress[0].node.html}} />
-                    </div>
-                </div>
+      <Layout>
+        <SEO title="About" />
+        <div className="pimg1">
+            <div className="ptext">
+                <span className="border">
+                    Who I Am
+                </span>
             </div>
-            <div className="about-main-body-sidebar">
-                <div className="about-main-body-sidebar-image">
-                    <Img fluid={data.profilePic.childImageSharp.fluid} />
-                </div>
-                <div className="about-main-facts-list">
-                    <h4>{siteTitle}</h4>
-                    <p className="about-main-facts-fact"><strong>Origin:</strong> California, USA</p>
-                    <p className="about-main-facts-fact"><strong>Current Location:</strong> Tokyo, Japan</p>
-                    <p className="about-main-facts-fact"><strong>Occupation:</strong> Web Developer</p>
-                    <p className="about-main-facts-fact"><strong>Education:</strong> Bachelor of Science - Physics</p>
-                </div>
-            </div> 
-          </div>
         </div>
-        <Footer content="light" siteTitle={siteTitle} />
-    </div>  
-  </Layout>
+        <section className="section">
+            <h2>Past & Present Succinctly</h2>
+            <p><strong>Origin: </strong>Southern California, USA</p>
+            <p><strong>Based In: </strong>Tokyo, Japan</p>
+            <p><strong>Occupation: </strong>Web Developer</p>
+            <p><strong>Education: </strong>Bachelor of Science - Physics</p>
+            <br/>
+            <div dangerouslySetInnerHTML={{__html: infoRole[0].node.html}} />
+        </section>
+        <div className="pimg2">
+            <div className="ptext">
+                <span className="border">
+                    Tech I Work With
+                </span>
+            </div>
+        </div>
+        <section className="section">
+            <h2>Languages, Libraries, Etc.</h2>
+            <div className="tech-icons">
+                {
+                    professionalTech.length && 
+                    professionalTech.map((tech, i) => {
+                        return (
+                            <div key={i} className="tech-icons-icon">
+                                <img src={tech.node.frontmatter.image.publicURL} alt={tech.node.frontmatter.title}/>
+                                <small>{tech.node.frontmatter.title}</small>
+                            </div>  
+                        )
+                    })
+                }
+            </div>
+        </section>
+        <div className="pimg3">
+            <div className="ptext">
+                <span className="border">
+                    Send Me A Message
+                </span>
+                <a href="mailto:willjw3dev@gmail.com">
+                    <h3>willjw3dev@gmail.com</h3>
+                </a>      
+            </div>
+        </div>
+    </Layout>
   )
 }
 
