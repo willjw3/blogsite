@@ -69,7 +69,7 @@ const About = ({data}) => {
                     Send Me A Message
                 </span>
                 <a href="mailto:willjw3dev@gmail.com">
-                    <h3>willjw3dev@gmail.com</h3>
+                    <h4>willjw3dev@gmail.com</h4>
                 </a>      
             </div>
         </div>
