@@ -82,6 +82,9 @@ section {
 }
 
 @media(max-width: 580px) {
+    .pimg1, .pimg2, .pimg3 {
+        background-attachment: scroll;
+    }
     .pimg1, .pimg2 {
         min-height: 50vh;
     }
