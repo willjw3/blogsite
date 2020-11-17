@@ -57,12 +57,9 @@
 @media only screen and (max-width: 1200px) {
     .tagtemplate {
         &-body {
-            &-body {
-                margin: 15vh auto;
-                width: 60%;
-            }
-        }
-        
+            margin: 15vh auto;
+            width: 60%;
+        } 
     }
 }
 
@@ -80,6 +77,9 @@
         &-body {
             margin: 15vh auto;
             width: 75%;
+            &-post {
+               margin-bottom: 20px; 
+            }
         }
     }
 }
