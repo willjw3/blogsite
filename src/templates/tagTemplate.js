@@ -34,7 +34,7 @@ const TagTemplate = ({pageContext, data}) => {
                                 {post.node.frontmatter.image && 
                                     <Img
                                         fluid={post.node.frontmatter.image.childImageSharp.fluid}
-                                        style={{width: "160px", float: "left", marginRight: "5px", boxShadow: "1px 1px 3px"}} 
+                                        style={{width: "160px", float: "left", marginRight: "10px", boxShadow: "1px 1px 3px"}} 
                                     />
                                 }
                                 <p>{post.node.excerpt}</p>
