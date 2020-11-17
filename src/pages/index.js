@@ -53,7 +53,7 @@ const IndexPage = ({data}) => {
                 <h3>All Topics</h3>
                 {
                   allTags.map((tag, i) => {
-                    return <Link key={i} to={`/tags/${tag}`}><small style={{display: "block"}}>{tag}</small></Link> 
+                    return <Link key={i} to={`/tags/${tag}`}><p style={{margin: "0", textDecoration: "none"}}>{tag}</p></Link> 
                   })
                 }
               </div>

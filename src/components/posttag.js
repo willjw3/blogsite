@@ -6,7 +6,7 @@ const PostTag = ({tag}) => {
     return (
         <div className="posttag">
             <Link className="posttag-link" to={`/tags/${tag.toLowerCase()}/`}>
-                <small>{tag}</small>
+                <p>{tag}</p>
             </Link>
         </div>
     );

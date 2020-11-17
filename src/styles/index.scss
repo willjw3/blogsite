@@ -41,10 +41,12 @@ html, body {
                 & a {
                     text-decoration: none;
                     color: #010101;
+                    &:hover {
+                        color: gray;
+                    }
                 }
                 & small {
                     font-family: Rubik;
-                    font-style: italic;
                 }
                 & p {
                     font-family: Rubik;

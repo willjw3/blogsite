@@ -9,21 +9,23 @@
         & h2 {
             margin-bottom: 40px;
             font-family: Rubik;
-            color: darkslategray;
+            color: black;
             font-weight: 200;
             font-style: normal;
             text-align: center;   
         }
         &-post {
-            margin-bottom: 60px;
+            margin-bottom: 40px;
             &-link {
                 text-decoration: none;
-                color: dodgerblue;
+                color: goldenrod;
+                &:hover {
+                    text-decoration: underline;
+                    color: gray;
+                }
                 & h2 {
                     margin-bottom: 0;
                     font-family: Raleway;
-                    color: dodgerblue;
-                    font-style: italic;
                     font-weight: 600;
                     text-align: left;
                 }
@@ -32,7 +34,7 @@
                 font-family: Rubik;
             }
             &-under {
-                border: 1px solid dodgerblue;
+                border: 1px solid gray;
             }
             & p {
                 margin-bottom: 0;

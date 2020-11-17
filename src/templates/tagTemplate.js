@@ -12,42 +12,44 @@ const TagTemplate = ({pageContext, data}) => {
     const posts = data.allMarkdownRemark.edges;
     const { tag } = pageContext;
     const { totalCount } = data.allMarkdownRemark;
-    const tagHeader = `${tag}: ${totalCount} post${totalCount === 1 ? "" : "s"}`;
+    const tagHeader = `${tag}: ${totalCount} post${totalCount === 1 ? "" : "s"}`.replace("-", " ");
 
     return (
         <Layout>
             <SEO title={tag} />
             <div className="tagtemplate">
                 <div className="tagtemplate-body">
-                <i><h2>{tagHeader}</h2></i>
+                <i><h2 className="tagtemplate-body-heading">{tagHeader}</h2></i>
                 {posts.map((post, i) => {
                     const tags = post.node.frontmatter.tags;
                     return (
-                        <div className="tagtemplate-body-post" key={i}>
-                            <Link className="tagtemplate-body-post-link"
-                                to={post.node.fields.slug}
-                            ><h2>{post.node.frontmatter.title}</h2>
-                            </Link>
-                            <small className="tagtemplate-body-post-date">Posted on {post.node.frontmatter.date}</small>
-                            <hr className="tagtemplate-body-post-under"/>
-                            {post.node.frontmatter.image && 
-                                <Img
-                                    fluid={post.node.frontmatter.image.childImageSharp.fluid}
-                                    style={{width: "120px", float: "left", marginRight: "5px"}} 
-                                />
-                            }
-                            <p>{post.node.excerpt}</p>
-                            <Link className="tagtemplate-body-post-link"
-                                to={post.node.fields.slug}
-                            ><small> Read full post</small>
-                            </Link>
-                            <hr/>
+                        <>
+                            <div className="tagtemplate-body-post" key={i}>
+                                <Link className="tagtemplate-body-post-link"
+                                    to={post.node.fields.slug}
+                                ><h2>{post.node.frontmatter.title}</h2>
+                                </Link>
+                                <small className="tagtemplate-body-post-date">Posted on {post.node.frontmatter.date}</small>
+                                <hr className="tagtemplate-body-post-under"/>
+                                {post.node.frontmatter.image && 
+                                    <Img
+                                        fluid={post.node.frontmatter.image.childImageSharp.fluid}
+                                        style={{width: "160px", float: "left", marginRight: "5px", boxShadow: "1px 1px 3px"}} 
+                                    />
+                                }
+                                <p>{post.node.excerpt}</p>
+                                <Link className="tagtemplate-body-post-link"
+                                    to={post.node.fields.slug}
+                                ><small> Read full post</small>
+                                </Link>
+                            </div>
+                            <hr />
                             <div className="tagtemplate-body-post-tag-wrap">
                                 {tags.map((tag, i) => {
                                     return <PostTag key={i} tag={tag}/>
                                 })}
                             </div>
-                        </div>
+                        </>
                     )
                 })}
                 </div>
@@ -74,7 +76,7 @@ export const pageQuery = graphql`
       totalCount
       edges {
          node {
-            excerpt(pruneLength: 700)
+            excerpt(pruneLength: 400)
             html
             id
             frontmatter {

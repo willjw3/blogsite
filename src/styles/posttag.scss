@@ -1,11 +1,14 @@
 .posttag {
     &-link {
         text-decoration-color: white;
-        & small {
-            color: darkgray;
+        & p {
+            color: gray;
             text-decoration: none;
             font-family: Rubik;
+            margin-top: 0;
+            &:hover {
+                text-decoration: underline;
+            }
         }
-    }
-    
+    }   
 }
