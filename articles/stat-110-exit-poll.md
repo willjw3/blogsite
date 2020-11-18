@@ -9,7 +9,7 @@ pagetype: "article"
 
 **Warning: Spoilers Follow**
 
-From Unit 2 of Blitzstein/Hwang Probability (Harvard's Stat 110 (Probability) course)
+From Unit 2 of *Blitzstein/Hwang Probability* (Harvard's Stat 110 probability course)
 
 **Ex. 2.11**<br>
 *An exit poll in an election is a survey taken of voters just after they have voted. One major use of exit polls has been so that news organizations can try to figure out as soon as possible who won the election, before the votes are officially counted. This has been notoriously innacurate in various elections, sometimes because of selection bias: the sample of people who are invited to and agree to participate in the survey may not be similar enough to the overall population of voters.*<br>
@@ -20,7 +20,7 @@ $$
 p = P(A|W)P(W) + P(A|W^{c})P(W^{c})
 $$
 
-Unfortunately, we don't have a way of determining $P(W), and by extension P(W^{c}), given the information above, so we'll need to come up with a different route to a solution.
+Unfortunately, we don't have a way of determining $P(W)$, and by extension $P(W^{c})$, given the information above, so we'll need to come up with a different route to a solution.
 
 60% of the respondents say they voted for A, and we are told the respondents are all honest, so we can say $P(A|W) = 0.6$. Baye's Theorem gives us:
 $$
