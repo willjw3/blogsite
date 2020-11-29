@@ -8,7 +8,7 @@
   Personal Website of Will Ward
 </h1>
 
-*Built off of one of my Gatsby starters, Writer Showcase *<br>
+*Built off of one of my Gatsby starters, Writer Showcase*<br>
 [gatsby-starter-writer-showcase](https://github.com/willjw3/gatsby-starter-writer-showcase)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ae092d09-ae34-4fc0-8179-322c86d197b4/deploy-status)](https://app.netlify.com/sites/developer-diary/deploys)
