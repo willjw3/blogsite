@@ -38,10 +38,10 @@ const Layout = ({ children }) => {
         <main>{children}</main>
         <div className={sidebarClass}>
           <Link to="/tags/web-development"><h3 className="sidebar-link">Web Development</h3></Link>
-          <Link to="/tags/data-science"><h3 className="sidebar-link">Data Science</h3></Link>
+          <a href="https://github.com/willjw3/nonlinear-dynamics-notebooks" target="_blank" rel="noreferrer noopener"><h3 className="sidebar-link">Notebooks</h3></a>
           <Link to="/tags/mathematics"><h3 className="sidebar-link">Mathematics</h3></Link>
           <Link to="/archives"><h3 className="sidebar-link">Browse Archives</h3></Link>
-          <a href="https://willjw3.netlify.app"><h3 className="sidebar-link">About</h3></a>
+          <a href="https://willjw3.netlify.app" target="_blank" rel="noreferrer noopener"><h3 className="sidebar-link">About</h3></a>
           <button className="sidebar-btn" onClick={handleClose}>CLOSE</button>
         </div>
     </>
