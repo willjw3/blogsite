@@ -41,7 +41,7 @@ const Header = ({ siteTitle, isOpen }) => {
           <Link className="header-links-internal-link" to="/tags/web-development">Web Development</Link>
           <a className="header-links-internal-link" href="https://github.com/willjw3/nonlinear-dynamics-notebooks" target="_blank" rel="noreferrer noopener">Notebooks</a>
           <Link className="header-links-internal-link" to="/tags/mathematics">Mathematics</Link>
-          <a href="https://willjw3.netlify.app/" className="header-links-internal-link" target="_blank" rel="noreferrer noopener">About</a>
+          <a href="https://willjw3.netlify.app/" className="header-links-internal-link">About</a>
         </div>
       </div>
       <div className="header-burger">
