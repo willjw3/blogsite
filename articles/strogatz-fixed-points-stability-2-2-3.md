@@ -20,8 +20,6 @@ $$\dot {x} = x - x^{3}$$
 
 <iframe src="https://www.desmos.com/calculator/ysouxtxafy?embed" width="500px" height="300px" style="border: 1px solid #ccc" frameborder=0></iframe>
 
-![vector field](../src/images/vector_field_2-2-3.jpg)
-
 From the above graph of $\dot {x} = x - x^{3}$, it's straightforward to sketch the vector field shown below it. The fixed points are $x*$ = -1, 0, and 1. $\dot {x}$ is positive to the left of $x*$ = -1, so the flow is to the right. To the right of $x*$ = -1, $\dot {x}$ is negative, so the flow is to the left. From these two facts, it's clear that $x*$ = -1 is a stable fixed point. Using the same analysis for the other fixed points, we conclude that that $x*$ = 0 is an unstable fixed point and $x*$ = 1 is a stable fixed point.
 
 An analytic solution is possible.
