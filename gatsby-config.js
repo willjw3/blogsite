@@ -16,6 +16,7 @@ module.exports = {
         plugins: [
           `gatsby-remark-responsive-iframe`,
           `gatsby-plugin-netlify-cms-paths`,
+          `gatsby-remark-images`,
           {
             resolve: `gatsby-remark-katex`,
             options: {
