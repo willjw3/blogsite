@@ -16,7 +16,7 @@ module.exports = {
         plugins: [
           `gatsby-remark-responsive-iframe`,
           `gatsby-plugin-netlify-cms-paths`,
-          `gatsby-remark-images`,
+          `gatsby-remark-images`, 
           {
             resolve: `gatsby-remark-katex`,
             options: {
@@ -92,7 +92,7 @@ module.exports = {
                   "type": "htmlQuery",
                   "sourceField": "html",
                   "excerptSelector": "html > *",
-                  "ignoreSelector": "img, .gatsby-highlight",
+                  "ignoreSelector": ".gatsby-highlight",
                   "stripSelector": "a",
                   "elementReplacements": [
                       {
