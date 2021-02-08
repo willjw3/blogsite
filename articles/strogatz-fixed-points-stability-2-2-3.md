@@ -26,21 +26,21 @@ From the above graph of $\dot {x} = x - x^{3}$, it's straightforward to sketch t
 
 An analytic solution is possible.
 
-$$\frac{\mathrm{d} x}{\mathrm{d} t} = x - x^{3} = x(1 -x^{2}) = x(1+x)(1-x)$$
+$$\dfrac{\mathrm{d} x}{\mathrm{d} t} = x - x^{3} = x(1 -x^{2}) = x(1+x)(1-x)$$
 
-$$\frac{1}{x(1+x)(1-x)}dx = dt$$
+$$\dfrac{1}{x(1+x)(1-x)}dx = dt$$
 
-$$\int \frac{1}{x}dx - \frac{1}{2}\int \frac{1}{x+1}dx - \frac{1}{2}\int\frac{1}{x-1}dx = \int_{0}^{t}dt$$
+$$\displaystyle\int \dfrac{1}{x}dx - \dfrac{1}{2}\int \dfrac{1}{x+1}dx - \dfrac{1}{2}\int\dfrac{1}{x-1}dx = \int_{0}^{t}dt$$
 
-$$ln\left |x  \right | - \frac{1}{2}ln\left |x+1 \right | - \frac{1}{2}ln\left |x-1\right | + C = t$$
+$$ln\left |x  \right | - \dfrac{1}{2}ln\left |x+1 \right | - \dfrac{1}{2}ln\left |x-1\right | + C = t$$
 
-$$\pm \frac{x^{2}}{x^{2} - 1} = ke^{2t}$$ (must consider + and - solutions)
+$$\pm \dfrac{x^{2}}{x^{2} - 1} = ke^{2t}$$ (must consider + and - solutions)
 
-$$x(t) = \pm \frac{\sqrt{k}e^{t}}{\sqrt{ke^{2t}-1}}$$
+$$x(t) = \pm \dfrac{\sqrt{k}e^{t}}{\sqrt{ke^{2t}-1}}$$
 
 and
 
-$$x(t) = \pm \frac{\sqrt{k}e^{t}}{\sqrt{ke^{2t}+1}}$$
+$$x(t) = \pm \dfrac{\sqrt{k}e^{t}}{\sqrt{ke^{2t}+1}}$$
 
 Solutions tend toward $\pm \ 1$ as t goes to $\pm \infty $
 
